@@ -1,0 +1,7 @@
+{
+	"overpass-server-list" : [
+		{ "url" : "http://overpass-api.de/api/interpreter"},
+		{ "url" : "http://overpass.osm.rambler.ru/cgi/interpreter"},
+		{ "url" : "http://api.openstreetmap.fr/oapi/interpreter"}
+	]
+}

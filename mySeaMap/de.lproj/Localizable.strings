@@ -1,0 +1,73 @@
+/* 
+  Localizable.strings
+  mySeaMap
+
+  Created by Frank Budszuhn on 07.11.13.
+  Copyright (c) 2013 - 2017 Frank Budszuhn. See LICENSE.
+*/
+
+"1WEEK"                         = "1 Woche";
+"1MONTH"                        = "1 Monat";
+"ALERT_CALL"                    = "Anrufen";
+"ALERT_PLACE_CALL"              = "%@ jetzt anrufen?";
+"BIG_INSTRUMENTS"               = "Große Instrumente";
+"BUTTON_CALL"                   = "Anrufen";
+"BUTTON_CANCEL"                 = "Abbrechen";
+"BUTTON_DELETE_CACHE"           = "Cache löschen";
+"BUTTON_MAP"                    = "Karte";
+"CACHE_SETTINGS"                = "Cache";
+"COPY_MESSAGE"                  = "Die angezeigte Position wurde in die Zwischenablage kopiert.";
+"DELETING"                      = "lösche...";
+"EMAIL_NOT_CONFIGURED_TITLE"	= "E-Mail Fehler";
+"EMAIL_NOT_CONFIGURED_TEXT"     = "Ihr Gerät ist nicht zum Senden von E-Mails konfiguriert.";
+"FOOTER_MAGNIFICATION"          = "Um bei Retina-Displays Schriften auch auf größere Entferungen ablesen zu können, kann es sinnvoll sein, die Karte zu vergrößern.";
+"FOOTER_STORAGE_TIME"           = "Legt fest wie lange die gespeicherten Informationen aufbewahrt werden.";
+"FOOTER_STORAGE_USAGE"          = "OpenSeaMap- und MapQuest-Kacheln werden automatisch gespeichert und stehen für die Offline-Nutzung bereit. Leider können Apple-Karten nicht zwischengespeichert werden.";
+"HEADER_MAGNIFICATION"          = "100% bedeutet keine Vergrößerung";
+"HEADER_STORAGE_TIME"           = "Speicherzeit";
+"HEADER_STORAGE_USAGE"          = "Speicherverbrauch";
+"INDEFINITE"                    = "unbegrenzt";
+"LABEL_EMPTY_VIEW"              = "Keine weitere Information vorhanden";
+"LOADING"                       = "Lade...";
+"MAGNIFICATION"                 = "Vergrößerung";
+"MAP_CONTROL_CROSSHAIRS"        = "Fadenkreuz";
+"MAP_CONTROL_HEADLINE"          = "Kartenelemente";
+"MAP_CONTROL_ROTATE"            = "Erlaube drehen der Karte";
+"MAP_CONTROL_SCALE"             = "Maßstab";
+"MAP_SETTINGS"                  = "Karteneinstellungen";
+"MAP_TYPE_MAP"                  = "Straßenkarte";
+"MAP_TYPE_SATELLITE"            = "Satellit";
+"MAP_TYPE_HYBRID"               = "Hybrid";
+"MAPQUEST_TILES"                = "MapQuest Kacheln";
+"MY_VESSEL"                     = "Mein Schiff";
+"OVERPASS_OBJECTS"              = "Häfen und Schleusen";
+"SEAMARK_TILES"                 = "Seezeichen Kacheln";
+"TABLE_HEADER_MAPTYPE"          = "Kartentyp";
+"TITLE_SETTINGS"                = "Einstellungen";
+"UNIT_SETTINGS"                 = "Einheiten";
+"WARNING_ALERT_HEADLINE"        = "Warnung";
+"WARNING_ALERT_TEXT"            = "Diese auf OpenSeaMap basierten Karten sind nicht für die Navigation geeignet! Informationen können fehlen oder falsch sein!";
+"WARNING_ALERT_BUTTON"          = "Ich akzeptiere";
+
+"info_group_name_and_description"   = "Name & Beschreibung";
+"info_group_contact"                = "Kontaktdaten";
+"info_group_metrics"                = "Abmessungen";
+"info_group_times"                  = "Zeiten";
+
+"key_website"                   = "Web";
+"key_email"                     = "Mail";
+"key_phone"                     = "Tel";
+"key_vhf"                       = "UKW";
+"key_maxlength"                 = "max. Länge";
+"key_maxwidth"                  = "max. Breite";
+"key_maxdraft"                  = "max. Tiefgang";
+"key_opening_hours"             = ""; // a hack
+"key_passage_time"              = "Durchfahrtszeit";
+"key_clearance_height"          = "Durchfahrtshöhe";
+"key_clearance_height_safe"     = "Sichere Durchfahrtshöhe";
+"key_clearance_height_closed"   = "Durchfahrtshöhe (geschlossen)";
+"key_clearance_height_open"     = "Durchfahrtshöhe (offen)";
+
+"seamark_type_harbour"          = "Hafen";
+"seamark_type_lock_basin"       = "Schleuse";
+"seamark_type_bridge"           = "Brücke";

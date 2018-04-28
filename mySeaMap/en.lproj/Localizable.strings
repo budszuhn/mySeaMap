@@ -1,0 +1,73 @@
+/* 
+  Localizable.strings
+  mySeaMap
+
+  Created by Frank Budszuhn on 07.11.13.
+  Copyright (c) 2013 - 2017 Frank Budszuhn. See LICENSE.
+*/
+
+"1WEEK"                         = "1 week";
+"1MONTH"                        = "1 month";
+"ALERT_CALL"                    = "Call";
+"ALERT_PLACE_CALL"              = "Call %@ now?";
+"BIG_INSTRUMENTS"               = "Large instruments";
+"BUTTON_CALL"                   = "Call";
+"BUTTON_CANCEL"                 = "Cancel";
+"BUTTON_DELETE_CACHE"           = "Delete cache";
+"BUTTON_MAP"                    = "Map";
+"CACHE_SETTINGS"                = "Cache";
+"COPY_MESSAGE"                  = "The indicated position has been copied to the clipboard.";
+"DELETING"                      = "deleting...";
+"EMAIL_NOT_CONFIGURED_TITLE"	=	"Mail error";
+"EMAIL_NOT_CONFIGURED_TEXT"     =	"Your device is not configured to send emails.";
+"FOOTER_MAGNIFICATION"          = "Magnification can help to improve readability of map details on retina displays.";
+"FOOTER_STORAGE_TIME"           = "Defines how long data is kept in the cache.";
+"FOOTER_STORAGE_USAGE"          = "OpenSeaMap and MapQuest tiles are stored automatically and are available for offline usage. Unfortunately Apple maps cannot be cached.";
+"HEADER_MAGNIFICATION"          = "100% means no magnification";
+"HEADER_STORAGE_TIME"           = "Storage duration";
+"HEADER_STORAGE_USAGE"          = "Storage used";
+"INDEFINITE"                    = "indefinite";
+"LABEL_EMPTY_VIEW"              = "There's no more information available";
+"LOADING"                       = "Loading...";
+"MAGNIFICATION"                 = "Magnification";
+"MAP_CONTROL_CROSSHAIRS"        = "Crosshairs";
+"MAP_CONTROL_HEADLINE"          = "Map controls";
+"MAP_CONTROL_ROTATE"            = "Allow rotation of map";
+"MAP_CONTROL_SCALE"             = "Map scale";
+"MAP_SETTINGS"                  = "Map settings";
+"MAP_TYPE_MAP"                  = "Street map";
+"MAP_TYPE_SATELLITE"            = "Satellite";
+"MAP_TYPE_HYBRID"               = "Hybrid";
+"MAPQUEST_TILES"                = "MapQuest tiles";
+"MY_VESSEL"                     = "My vessel";
+"OVERPASS_OBJECTS"              = "Harbours and locks";
+"SEAMARK_TILES"                 = "Seamark tiles";
+"TABLE_HEADER_MAPTYPE"          = "Map type";
+"TITLE_SETTINGS"                = "Settings";
+"UNIT_SETTINGS"                 = "Units";
+"WARNING_ALERT_HEADLINE"        = "Warning";
+"WARNING_ALERT_TEXT"            = "These OpenSeaMap based charts are not suitable for navigation! Informationen may be inaccurate or missing!";
+"WARNING_ALERT_BUTTON"          = "I accept";
+
+"info_group_name_and_description"   = "Name & description";
+"info_group_contact"                = "Contact";
+"info_group_metrics"                = "Metrics";
+"info_group_times"                  = "Times";
+
+"key_website"                   = "Web";
+"key_email"                     = "Mail";
+"key_phone"                     = "Fon";
+"key_vhf"                       = "Vhf";
+"key_maxlength"                 = "max. length";
+"key_maxwidth"                  = "max. width";
+"key_maxdraft"                  = "max. draft";
+"key_opening_hours"             = "";
+"key_passage_time"              = "Passage time";
+"key_clearance_height"          = "Clearance";
+"key_clearance_height_safe"     = "Safe clearance";
+"key_clearance_height_closed"   = "Clearance (closed)";
+"key_clearance_height_open"     = "Clearance (open)";
+
+"seamark_type_harbour"          = "Harbour";
+"seamark_type_lock_basin"       = "Lock";
+"seamark_type_bridge"           = "Bridge";

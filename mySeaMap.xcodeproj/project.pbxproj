@@ -1,0 +1,1029 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		010E35E919222148008E6F56 /* MSMZoomSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 010E35E819222148008E6F56 /* MSMZoomSettingsViewController.m */; };
+		01115FC8182AD9F900F14144 /* MSMAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01115FC7182AD9F900F14144 /* MSMAboutViewController.m */; };
+		011272C31DE370D100E41E8F /* MSMScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011272C21DE370D100E41E8F /* MSMScaleView.swift */; };
+		011DB2251921547500AAEDC9 /* myseamap.json in Resources */ = {isa = PBXBuildFile; fileRef = 011DB2241921547500AAEDC9 /* myseamap.json */; };
+		011EF42F18636431009B0520 /* FBGeoRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 011EF42E18636431009B0520 /* FBGeoRegion.m */; };
+		0121BAFC20943D4700F21903 /* FONode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0121BAF820943D4700F21903 /* FONode.m */; };
+		0121BAFD20943D4700F21903 /* FOQueryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0121BAF920943D4700F21903 /* FOQueryManager.m */; };
+		0121BAFE20943D4700F21903 /* FORelation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0121BAFA20943D4700F21903 /* FORelation.m */; };
+		0121BAFF20943D4700F21903 /* FOWay.m in Sources */ = {isa = PBXBuildFile; fileRef = 0121BAFB20943D4700F21903 /* FOWay.m */; };
+		0124F15D1827D072002B0DC7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0124F15C1827D072002B0DC7 /* Foundation.framework */; };
+		0124F15F1827D072002B0DC7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0124F15E1827D072002B0DC7 /* CoreGraphics.framework */; };
+		0124F1611827D072002B0DC7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0124F1601827D072002B0DC7 /* UIKit.framework */; };
+		0124F1671827D072002B0DC7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0124F1651827D072002B0DC7 /* InfoPlist.strings */; };
+		0124F1691827D072002B0DC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0124F1681827D072002B0DC7 /* main.m */; };
+		0124F16D1827D072002B0DC7 /* MSMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0124F16C1827D072002B0DC7 /* MSMAppDelegate.m */; };
+		0124F1731827D072002B0DC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0124F1711827D072002B0DC7 /* Main.storyboard */; };
+		0124F1761827D072002B0DC7 /* MSMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0124F1751827D072002B0DC7 /* MSMViewController.m */; };
+		0124F1781827D072002B0DC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0124F1771827D072002B0DC7 /* Images.xcassets */; };
+		0124F1951827D135002B0DC7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0124F1941827D135002B0DC7 /* MapKit.framework */; };
+		013929F11BBA8C95004697D3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013929F01BBA8C95004697D3 /* Launch Screen.storyboard */; };
+		013956EB182D26F700833CB4 /* FBGeoValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 013956EA182D26F700833CB4 /* FBGeoValue.m */; };
+		013956EE182D2FDD00833CB4 /* FBGeoLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 013956ED182D2FDD00833CB4 /* FBGeoLocation.m */; };
+		014418B31D9A924400DF32BF /* GPX.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 014418B21D9A924400DF32BF /* GPX.mustache */; };
+		014418B61D9A97FB00DF32BF /* MSMGPXExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 014418B51D9A97FB00DF32BF /* MSMGPXExporter.m */; };
+		015ED24E1D98E2A60033075B /* MSMTrackExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 015ED24D1D98E2A60033075B /* MSMTrackExporter.m */; };
+		0160A5AA193E0E6900FD1B5A /* MSMMapSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160A5A9193E0E6900FD1B5A /* MSMMapSource.m */; };
+		0160A5AC193E108500FD1B5A /* mapsources.json in Resources */ = {isa = PBXBuildFile; fileRef = 0160A5AB193E108500FD1B5A /* mapsources.json */; };
+		016414E8183125F10036610E /* MSMGeoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 016414E7183125F10036610E /* MSMGeoUtils.m */; };
+		016B1F8A18DD5C92004D58E6 /* MSMCachedTileOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 016B1F8918DD5C92004D58E6 /* MSMCachedTileOverlay.m */; };
+		016C2E58184E605C0097B58E /* MSMMapObjectRawDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 016C2E57184E605C0097B58E /* MSMMapObjectRawDataViewController.m */; };
+		0172E7841D939D9B00A5C1D2 /* MSMTrackListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0172E7831D939D9B00A5C1D2 /* MSMTrackListTableViewController.m */; };
+		0174C7521D97A76C001EA410 /* MSMTrackDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0174C7511D97A76C001EA410 /* MSMTrackDetailTableViewController.m */; };
+		0174C7551D97A97E001EA410 /* MSMTrackListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0174C7541D97A97E001EA410 /* MSMTrackListTableViewCell.m */; };
+		0178608B1D92BB660078F2B6 /* TrackEntry+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 017860841D92BB660078F2B6 /* TrackEntry+CoreDataProperties.m */; };
+		0178608C1D92BB660078F2B6 /* TrackEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 017860861D92BB660078F2B6 /* TrackEntry.m */; };
+		0178608D1D92BB660078F2B6 /* Track+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 017860881D92BB660078F2B6 /* Track+CoreDataProperties.m */; };
+		0178608E1D92BB660078F2B6 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 0178608A1D92BB660078F2B6 /* Track.m */; };
+		017860911D92BCEC0078F2B6 /* MSMTrackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 017860901D92BCEC0078F2B6 /* MSMTrackManager.m */; };
+		01817CF11D9254E000ABC181 /* mySeaMap.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01817CEF1D9254E000ABC181 /* mySeaMap.xcdatamodeld */; };
+		0181AFBA184DB9AC002DCCA9 /* FBOSMNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0181AFB9184DB9AC002DCCA9 /* FBOSMNode.m */; };
+		0185317F18D60405007E96E6 /* MSMInfoGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 0185317E18D60405007E96E6 /* MSMInfoGroup.m */; };
+		01880199182C303600C82E58 /* MSMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01880198182C303600C82E58 /* MSMUtils.m */; };
+		018C996D1DDA00A800F93985 /* MSMInstrumentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 018C996C1DDA00A800F93985 /* MSMInstrumentsView.m */; };
+		0199FD821951E74E00E13FD2 /* MSMExternalScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 0199FD811951E74E00E13FD2 /* MSMExternalScreen.m */; };
+		01A12EED18D44160000BCDDD /* MSMSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A12EEC18D44160000BCDDD /* MSMSearchViewController.m */; };
+		01A378E318E56DEA00D650BC /* MSMCrossHairsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A378E218E56DEA00D650BC /* MSMCrossHairsView.m */; };
+		01A9894A185F0C5D00AA672C /* MSMPolygonRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A98949185F0C5D00AA672C /* MSMPolygonRenderer.m */; };
+		01AC317018296CFA0092EC8E /* MSMMapControlsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AC316F18296CFA0092EC8E /* MSMMapControlsView.m */; };
+		01AC4030185C85B500EF2AF7 /* FBTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AC402F185C85B500EF2AF7 /* FBTile.m */; };
+		01AD4C05184CFDD800AA9F31 /* MSMOverPassQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AD4C04184CFDD800AA9F31 /* MSMOverPassQuery.m */; };
+		01AD59031DEAF6D300F0CBB8 /* MSMViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD59021DEAF6D300F0CBB8 /* MSMViewControllerExtension.swift */; };
+		01B5BDE218FFA30F007493BB /* MSMShipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B5BDE118FFA30F007493BB /* MSMShipView.m */; };
+		01B9F4661953204400F9045E /* ExternalScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01B9F4641953204400F9045E /* ExternalScreen.storyboard */; };
+		01B9F4691953226200F9045E /* MSMBaseMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B9F4681953226200F9045E /* MSMBaseMapViewController.m */; };
+		01B9F46C195322F800F9045E /* MSMExternalScreenMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B9F46B195322F800F9045E /* MSMExternalScreenMapViewController.m */; };
+		01BB24AB18D2E5A5005C4E5C /* MSMNavigationalObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BB24AA18D2E5A5005C4E5C /* MSMNavigationalObject.m */; };
+		01BB24AE18D2E655005C4E5C /* MSMBuoyLateral.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BB24AD18D2E655005C4E5C /* MSMBuoyLateral.m */; };
+		01BB24B118D2FCC7005C4E5C /* MSMBuoyCardinal.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BB24B018D2FCC7005C4E5C /* MSMBuoyCardinal.m */; };
+		01BB24B418D309C6005C4E5C /* FBOSMWay.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BB24B318D309C6005C4E5C /* FBOSMWay.m */; };
+		01BB24B718D34E32005C4E5C /* MSMSmallCraftFacility.m in Sources */ = {isa = PBXBuildFile; fileRef = 01BB24B618D34E32005C4E5C /* MSMSmallCraftFacility.m */; };
+		01BE39E3182BE396008DE2C8 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 01BE39E5182BE396008DE2C8 /* about.html */; };
+		01BE39EA182BEE7E008DE2C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01BE39EC182BEE7E008DE2C8 /* Localizable.strings */; };
+		01C69EC218CF74EE0028DF28 /* MSMCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C69EC118CF74EE0028DF28 /* MSMCache.m */; };
+		01CD0C2C18DC1BD000DEC6C9 /* MSMValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CD0C2B18DC1BD000DEC6C9 /* MSMValueFormatter.m */; };
+		01CD0C3018DC1EE800DEC6C9 /* MSMMetricsFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CD0C2F18DC1EE800DEC6C9 /* MSMMetricsFormatter.m */; };
+		01CD9B2C18D898030049149C /* MSMLockBasin.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9B2B18D898030049149C /* MSMLockBasin.m */; };
+		01CDE18B185F6DAD00453B5F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CDE18A185F6DAD00453B5F /* SystemConfiguration.framework */; };
+		01CDE18D185F6DB500453B5F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01CDE18C185F6DB500453B5F /* MobileCoreServices.framework */; };
+		01CE0384192624B7002EA145 /* MSMFeatureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CE0383192624B7002EA145 /* MSMFeatureManager.m */; };
+		01D0BE0618D216C6007ED53A /* MSMMapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D0BE0518D216C6007ED53A /* MSMMapObject.m */; };
+		01D0BE0918D21729007ED53A /* MSMHarbour.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D0BE0818D21729007ED53A /* MSMHarbour.m */; };
+		01D0BE0C18D22998007ED53A /* MSMBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D0BE0B18D22998007ED53A /* MSMBridge.m */; };
+		01DDB58D1921C9C70056B90B /* MSMOverpassServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DDB58C1921C9C70056B90B /* MSMOverpassServer.m */; };
+		01E2BB2E18E2BAC000E6F8C3 /* MSMLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E2BB2D18E2BAC000E6F8C3 /* MSMLocationManager.m */; };
+		01E2BB3018E2BDAD00E6F8C3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E2BB2F18E2BDAD00E6F8C3 /* CoreLocation.framework */; };
+		01E4B37C1827FA5500D1905E /* MSMSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01E4B37B1827FA5500D1905E /* MSMSettingsViewController.m */; };
+		01EF82BB18D5C08D00EEB8F1 /* MSMMapObjectDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EF82BA18D5C08D00EEB8F1 /* MSMMapObjectDetailTableViewController.m */; };
+		01EF863318E071BC002186DF /* MSMCacheSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EF863218E071BC002186DF /* MSMCacheSettingsViewController.m */; };
+		173D44071E13F98A00B52C2D /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173D44061E13F98A00B52C2D /* StyleKit.swift */; };
+		66D7459C815EF60CE79AF5CD /* libPods-myseamap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67C40198FE927A4E553596BA /* libPods-myseamap.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		010E35E719222148008E6F56 /* MSMZoomSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMZoomSettingsViewController.h; path = ViewController/MSMZoomSettingsViewController.h; sourceTree = "<group>"; };
+		010E35E819222148008E6F56 /* MSMZoomSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMZoomSettingsViewController.m; path = ViewController/MSMZoomSettingsViewController.m; sourceTree = "<group>"; };
+		01115FC6182AD9F900F14144 /* MSMAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMAboutViewController.h; path = ViewController/MSMAboutViewController.h; sourceTree = "<group>"; };
+		01115FC7182AD9F900F14144 /* MSMAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMAboutViewController.m; path = ViewController/MSMAboutViewController.m; sourceTree = "<group>"; };
+		011272BF1DE3705F00E41E8F /* myseamap-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "myseamap-Bridging-Header.h"; sourceTree = "<group>"; };
+		011272C21DE370D100E41E8F /* MSMScaleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSMScaleView.swift; path = Views/MSMScaleView.swift; sourceTree = "<group>"; };
+		011DB2241921547500AAEDC9 /* myseamap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = myseamap.json; path = data/myseamap.json; sourceTree = "<group>"; };
+		011EF42D18636431009B0520 /* FBGeoRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBGeoRegion.h; path = Model/FBGeoRegion.h; sourceTree = "<group>"; };
+		011EF42E18636431009B0520 /* FBGeoRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBGeoRegion.m; path = Model/FBGeoRegion.m; sourceTree = "<group>"; };
+		0121BAF320943D4700F21903 /* FORelation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FORelation.h; sourceTree = "<group>"; };
+		0121BAF420943D4700F21903 /* FOQueryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOQueryManager.h; sourceTree = "<group>"; };
+		0121BAF520943D4700F21903 /* FONode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FONode.h; sourceTree = "<group>"; };
+		0121BAF620943D4700F21903 /* FOWay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOWay.h; sourceTree = "<group>"; };
+		0121BAF720943D4700F21903 /* FOFlyover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FOFlyover.h; sourceTree = "<group>"; };
+		0121BAF820943D4700F21903 /* FONode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FONode.m; sourceTree = "<group>"; };
+		0121BAF920943D4700F21903 /* FOQueryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOQueryManager.m; sourceTree = "<group>"; };
+		0121BAFA20943D4700F21903 /* FORelation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FORelation.m; sourceTree = "<group>"; };
+		0121BAFB20943D4700F21903 /* FOWay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FOWay.m; sourceTree = "<group>"; };
+		0124F1591827D072002B0DC7 /* myseamap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myseamap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0124F15C1827D072002B0DC7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0124F15E1827D072002B0DC7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0124F1601827D072002B0DC7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0124F1641827D072002B0DC7 /* mySeaMap-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mySeaMap-Info.plist"; sourceTree = "<group>"; };
+		0124F1661827D072002B0DC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0124F1681827D072002B0DC7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0124F16A1827D072002B0DC7 /* mySeaMap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mySeaMap-Prefix.pch"; sourceTree = "<group>"; };
+		0124F16B1827D072002B0DC7 /* MSMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMAppDelegate.h; sourceTree = "<group>"; };
+		0124F16C1827D072002B0DC7 /* MSMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMAppDelegate.m; sourceTree = "<group>"; };
+		0124F1721827D072002B0DC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0124F1741827D072002B0DC7 /* MSMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMViewController.h; sourceTree = "<group>"; };
+		0124F1751827D072002B0DC7 /* MSMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMViewController.m; sourceTree = "<group>"; };
+		0124F1771827D072002B0DC7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0124F17E1827D072002B0DC7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		0124F1941827D135002B0DC7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		013929F01BBA8C95004697D3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		013956E9182D26F700833CB4 /* FBGeoValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBGeoValue.h; path = Model/FBGeoValue.h; sourceTree = "<group>"; };
+		013956EA182D26F700833CB4 /* FBGeoValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBGeoValue.m; path = Model/FBGeoValue.m; sourceTree = "<group>"; };
+		013956EC182D2FDD00833CB4 /* FBGeoLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBGeoLocation.h; path = Model/FBGeoLocation.h; sourceTree = "<group>"; };
+		013956ED182D2FDD00833CB4 /* FBGeoLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBGeoLocation.m; path = Model/FBGeoLocation.m; sourceTree = "<group>"; };
+		013B005E192CD4D900665BB6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		014418B21D9A924400DF32BF /* GPX.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GPX.mustache; path = Model/Tracking/GPX.mustache; sourceTree = "<group>"; };
+		014418B41D9A97FB00DF32BF /* MSMGPXExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMGPXExporter.h; path = Model/Tracking/MSMGPXExporter.h; sourceTree = "<group>"; };
+		014418B51D9A97FB00DF32BF /* MSMGPXExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMGPXExporter.m; path = Model/Tracking/MSMGPXExporter.m; sourceTree = "<group>"; };
+		015ED24C1D98E2A60033075B /* MSMTrackExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMTrackExporter.h; path = Model/Tracking/MSMTrackExporter.h; sourceTree = "<group>"; };
+		015ED24D1D98E2A60033075B /* MSMTrackExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMTrackExporter.m; path = Model/Tracking/MSMTrackExporter.m; sourceTree = "<group>"; };
+		0160A5A8193E0E6900FD1B5A /* MSMMapSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMMapSource.h; path = Model/MSMMapSource.h; sourceTree = "<group>"; };
+		0160A5A9193E0E6900FD1B5A /* MSMMapSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMMapSource.m; path = Model/MSMMapSource.m; sourceTree = "<group>"; };
+		0160A5AB193E108500FD1B5A /* mapsources.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = mapsources.json; path = data/mapsources.json; sourceTree = "<group>"; };
+		016414E6183125F10036610E /* MSMGeoUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMGeoUtils.h; path = Model/MSMGeoUtils.h; sourceTree = "<group>"; };
+		016414E7183125F10036610E /* MSMGeoUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMGeoUtils.m; path = Model/MSMGeoUtils.m; sourceTree = "<group>"; };
+		016B1F8818DD5C92004D58E6 /* MSMCachedTileOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMCachedTileOverlay.h; path = Model/TileOverlay/MSMCachedTileOverlay.h; sourceTree = "<group>"; };
+		016B1F8918DD5C92004D58E6 /* MSMCachedTileOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMCachedTileOverlay.m; path = Model/TileOverlay/MSMCachedTileOverlay.m; sourceTree = "<group>"; };
+		016C2E56184E605C0097B58E /* MSMMapObjectRawDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMMapObjectRawDataViewController.h; path = ViewController/MSMMapObjectRawDataViewController.h; sourceTree = "<group>"; };
+		016C2E57184E605C0097B58E /* MSMMapObjectRawDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMMapObjectRawDataViewController.m; path = ViewController/MSMMapObjectRawDataViewController.m; sourceTree = "<group>"; };
+		0172E7821D939D9B00A5C1D2 /* MSMTrackListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMTrackListTableViewController.h; path = ViewController/MSMTrackListTableViewController.h; sourceTree = "<group>"; };
+		0172E7831D939D9B00A5C1D2 /* MSMTrackListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMTrackListTableViewController.m; path = ViewController/MSMTrackListTableViewController.m; sourceTree = "<group>"; };
+		0174C7501D97A76C001EA410 /* MSMTrackDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMTrackDetailTableViewController.h; path = ViewController/MSMTrackDetailTableViewController.h; sourceTree = "<group>"; };
+		0174C7511D97A76C001EA410 /* MSMTrackDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMTrackDetailTableViewController.m; path = ViewController/MSMTrackDetailTableViewController.m; sourceTree = "<group>"; };
+		0174C7531D97A97E001EA410 /* MSMTrackListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMTrackListTableViewCell.h; path = Views/MSMTrackListTableViewCell.h; sourceTree = "<group>"; };
+		0174C7541D97A97E001EA410 /* MSMTrackListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMTrackListTableViewCell.m; path = Views/MSMTrackListTableViewCell.m; sourceTree = "<group>"; };
+		017860831D92BB660078F2B6 /* TrackEntry+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TrackEntry+CoreDataProperties.h"; path = "Model/CoreData/TrackEntry+CoreDataProperties.h"; sourceTree = "<group>"; };
+		017860841D92BB660078F2B6 /* TrackEntry+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TrackEntry+CoreDataProperties.m"; path = "Model/CoreData/TrackEntry+CoreDataProperties.m"; sourceTree = "<group>"; };
+		017860851D92BB660078F2B6 /* TrackEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrackEntry.h; path = Model/CoreData/TrackEntry.h; sourceTree = "<group>"; };
+		017860861D92BB660078F2B6 /* TrackEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackEntry.m; path = Model/CoreData/TrackEntry.m; sourceTree = "<group>"; };
+		017860871D92BB660078F2B6 /* Track+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Track+CoreDataProperties.h"; path = "Model/CoreData/Track+CoreDataProperties.h"; sourceTree = "<group>"; };
+		017860881D92BB660078F2B6 /* Track+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Track+CoreDataProperties.m"; path = "Model/CoreData/Track+CoreDataProperties.m"; sourceTree = "<group>"; };
+		017860891D92BB660078F2B6 /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Track.h; path = Model/CoreData/Track.h; sourceTree = "<group>"; };
+		0178608A1D92BB660078F2B6 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Track.m; path = Model/CoreData/Track.m; sourceTree = "<group>"; };
+		0178608F1D92BCEC0078F2B6 /* MSMTrackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMTrackManager.h; path = Model/Tracking/MSMTrackManager.h; sourceTree = "<group>"; };
+		017860901D92BCEC0078F2B6 /* MSMTrackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMTrackManager.m; path = Model/Tracking/MSMTrackManager.m; sourceTree = "<group>"; };
+		01817CF01D9254E000ABC181 /* mySeaMap.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mySeaMap.xcdatamodel; sourceTree = "<group>"; };
+		0181AFB8184DB9AC002DCCA9 /* FBOSMNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBOSMNode.h; path = Model/FBOSMNode.h; sourceTree = "<group>"; };
+		0181AFB9184DB9AC002DCCA9 /* FBOSMNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBOSMNode.m; path = Model/FBOSMNode.m; sourceTree = "<group>"; };
+		0185317D18D60405007E96E6 /* MSMInfoGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMInfoGroup.h; path = Model/MapObjects/MSMInfoGroup.h; sourceTree = "<group>"; };
+		0185317E18D60405007E96E6 /* MSMInfoGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMInfoGroup.m; path = Model/MapObjects/MSMInfoGroup.m; sourceTree = "<group>"; };
+		01880197182C303600C82E58 /* MSMUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMUtils.h; path = Div/MSMUtils.h; sourceTree = "<group>"; };
+		01880198182C303600C82E58 /* MSMUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMUtils.m; path = Div/MSMUtils.m; sourceTree = "<group>"; };
+		018C996B1DDA00A800F93985 /* MSMInstrumentsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMInstrumentsView.h; path = Views/MSMInstrumentsView.h; sourceTree = "<group>"; };
+		018C996C1DDA00A800F93985 /* MSMInstrumentsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMInstrumentsView.m; path = Views/MSMInstrumentsView.m; sourceTree = "<group>"; };
+		0199FD801951E74E00E13FD2 /* MSMExternalScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMExternalScreen.h; path = ExternalScreen/MSMExternalScreen.h; sourceTree = "<group>"; };
+		0199FD811951E74E00E13FD2 /* MSMExternalScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMExternalScreen.m; path = ExternalScreen/MSMExternalScreen.m; sourceTree = "<group>"; };
+		01A12EEB18D44160000BCDDD /* MSMSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMSearchViewController.h; path = ViewController/MSMSearchViewController.h; sourceTree = "<group>"; };
+		01A12EEC18D44160000BCDDD /* MSMSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMSearchViewController.m; path = ViewController/MSMSearchViewController.m; sourceTree = "<group>"; };
+		01A378E118E56DEA00D650BC /* MSMCrossHairsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMCrossHairsView.h; path = Views/MSMCrossHairsView.h; sourceTree = "<group>"; };
+		01A378E218E56DEA00D650BC /* MSMCrossHairsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMCrossHairsView.m; path = Views/MSMCrossHairsView.m; sourceTree = "<group>"; };
+		01A72FBF18DCC4780051FC64 /* MSMTimesFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMTimesFormatter.h; path = Model/MapObjects/MSMTimesFormatter.h; sourceTree = "<group>"; };
+		01A72FC018DCC4780051FC64 /* MSMTimesFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMTimesFormatter.m; path = Model/MapObjects/MSMTimesFormatter.m; sourceTree = "<group>"; };
+		01A98948185F0C5D00AA672C /* MSMPolygonRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMPolygonRenderer.h; path = Model/MSMPolygonRenderer.h; sourceTree = "<group>"; };
+		01A98949185F0C5D00AA672C /* MSMPolygonRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMPolygonRenderer.m; path = Model/MSMPolygonRenderer.m; sourceTree = "<group>"; };
+		01AC316E18296CFA0092EC8E /* MSMMapControlsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMMapControlsView.h; path = Views/MSMMapControlsView.h; sourceTree = "<group>"; };
+		01AC316F18296CFA0092EC8E /* MSMMapControlsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMMapControlsView.m; path = Views/MSMMapControlsView.m; sourceTree = "<group>"; };
+		01AC402E185C85B500EF2AF7 /* FBTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBTile.h; path = Model/FBTile.h; sourceTree = "<group>"; };
+		01AC402F185C85B500EF2AF7 /* FBTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBTile.m; path = Model/FBTile.m; sourceTree = "<group>"; };
+		01AD4C03184CFDD800AA9F31 /* MSMOverPassQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMOverPassQuery.h; path = Model/MSMOverPassQuery.h; sourceTree = "<group>"; };
+		01AD4C04184CFDD800AA9F31 /* MSMOverPassQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMOverPassQuery.m; path = Model/MSMOverPassQuery.m; sourceTree = "<group>"; };
+		01AD59021DEAF6D300F0CBB8 /* MSMViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSMViewControllerExtension.swift; path = ViewController/MSMViewControllerExtension.swift; sourceTree = "<group>"; };
+		01B5BDE018FFA30F007493BB /* MSMShipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMShipView.h; path = Views/MSMShipView.h; sourceTree = "<group>"; };
+		01B5BDE118FFA30F007493BB /* MSMShipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMShipView.m; path = Views/MSMShipView.m; sourceTree = "<group>"; };
+		01B9F4651953204400F9045E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ExternalScreen.storyboard; sourceTree = "<group>"; };
+		01B9F4671953226200F9045E /* MSMBaseMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMBaseMapViewController.h; path = ViewController/MSMBaseMapViewController.h; sourceTree = "<group>"; };
+		01B9F4681953226200F9045E /* MSMBaseMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMBaseMapViewController.m; path = ViewController/MSMBaseMapViewController.m; sourceTree = "<group>"; };
+		01B9F46A195322F800F9045E /* MSMExternalScreenMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMExternalScreenMapViewController.h; path = ExternalScreen/MSMExternalScreenMapViewController.h; sourceTree = "<group>"; };
+		01B9F46B195322F800F9045E /* MSMExternalScreenMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMExternalScreenMapViewController.m; path = ExternalScreen/MSMExternalScreenMapViewController.m; sourceTree = "<group>"; };
+		01BB24A918D2E5A5005C4E5C /* MSMNavigationalObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMNavigationalObject.h; path = Model/MapObjects/MSMNavigationalObject.h; sourceTree = "<group>"; };
+		01BB24AA18D2E5A5005C4E5C /* MSMNavigationalObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMNavigationalObject.m; path = Model/MapObjects/MSMNavigationalObject.m; sourceTree = "<group>"; };
+		01BB24AC18D2E655005C4E5C /* MSMBuoyLateral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMBuoyLateral.h; path = Model/MapObjects/MSMBuoyLateral.h; sourceTree = "<group>"; };
+		01BB24AD18D2E655005C4E5C /* MSMBuoyLateral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMBuoyLateral.m; path = Model/MapObjects/MSMBuoyLateral.m; sourceTree = "<group>"; };
+		01BB24AF18D2FCC7005C4E5C /* MSMBuoyCardinal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMBuoyCardinal.h; path = Model/MapObjects/MSMBuoyCardinal.h; sourceTree = "<group>"; };
+		01BB24B018D2FCC7005C4E5C /* MSMBuoyCardinal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMBuoyCardinal.m; path = Model/MapObjects/MSMBuoyCardinal.m; sourceTree = "<group>"; };
+		01BB24B218D309C6005C4E5C /* FBOSMWay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBOSMWay.h; path = Model/FBOSMWay.h; sourceTree = "<group>"; };
+		01BB24B318D309C6005C4E5C /* FBOSMWay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBOSMWay.m; path = Model/FBOSMWay.m; sourceTree = "<group>"; };
+		01BB24B518D34E32005C4E5C /* MSMSmallCraftFacility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMSmallCraftFacility.h; path = Model/MapObjects/MSMSmallCraftFacility.h; sourceTree = "<group>"; };
+		01BB24B618D34E32005C4E5C /* MSMSmallCraftFacility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMSmallCraftFacility.m; path = Model/MapObjects/MSMSmallCraftFacility.m; sourceTree = "<group>"; };
+		01BE39E1182BE37A008DE2C8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		01BE39E6182BE3C8008DE2C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/about.html; sourceTree = "<group>"; };
+		01BE39E7182BE3C8008DE2C8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = de.lproj/about.html; sourceTree = "<group>"; };
+		01BE39ED182BEE8D008DE2C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		01BE39EE182BEE90008DE2C8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		01C69EC018CF74EE0028DF28 /* MSMCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMCache.h; path = Model/MSMCache.h; sourceTree = "<group>"; };
+		01C69EC118CF74EE0028DF28 /* MSMCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMCache.m; path = Model/MSMCache.m; sourceTree = "<group>"; };
+		01CD0C2A18DC1BD000DEC6C9 /* MSMValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMValueFormatter.h; path = Model/MapObjects/MSMValueFormatter.h; sourceTree = "<group>"; };
+		01CD0C2B18DC1BD000DEC6C9 /* MSMValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMValueFormatter.m; path = Model/MapObjects/MSMValueFormatter.m; sourceTree = "<group>"; };
+		01CD0C2E18DC1EE800DEC6C9 /* MSMMetricsFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMMetricsFormatter.h; path = Model/MapObjects/MSMMetricsFormatter.h; sourceTree = "<group>"; };
+		01CD0C2F18DC1EE800DEC6C9 /* MSMMetricsFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMMetricsFormatter.m; path = Model/MapObjects/MSMMetricsFormatter.m; sourceTree = "<group>"; };
+		01CD9B2A18D898030049149C /* MSMLockBasin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMLockBasin.h; path = Model/MapObjects/MSMLockBasin.h; sourceTree = "<group>"; };
+		01CD9B2B18D898030049149C /* MSMLockBasin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMLockBasin.m; path = Model/MapObjects/MSMLockBasin.m; sourceTree = "<group>"; };
+		01CDE18A185F6DAD00453B5F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		01CDE18C185F6DB500453B5F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		01CE0382192624B7002EA145 /* MSMFeatureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMFeatureManager.h; path = Model/MSMFeatureManager.h; sourceTree = "<group>"; };
+		01CE0383192624B7002EA145 /* MSMFeatureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMFeatureManager.m; path = Model/MSMFeatureManager.m; sourceTree = "<group>"; };
+		01D0BE0418D216C6007ED53A /* MSMMapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMMapObject.h; path = Model/MapObjects/MSMMapObject.h; sourceTree = "<group>"; };
+		01D0BE0518D216C6007ED53A /* MSMMapObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMMapObject.m; path = Model/MapObjects/MSMMapObject.m; sourceTree = "<group>"; };
+		01D0BE0718D21729007ED53A /* MSMHarbour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMHarbour.h; path = Model/MapObjects/MSMHarbour.h; sourceTree = "<group>"; };
+		01D0BE0818D21729007ED53A /* MSMHarbour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMHarbour.m; path = Model/MapObjects/MSMHarbour.m; sourceTree = "<group>"; };
+		01D0BE0A18D22998007ED53A /* MSMBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMBridge.h; path = Model/MapObjects/MSMBridge.h; sourceTree = "<group>"; };
+		01D0BE0B18D22998007ED53A /* MSMBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMBridge.m; path = Model/MapObjects/MSMBridge.m; sourceTree = "<group>"; };
+		01DDB58B1921C9C70056B90B /* MSMOverpassServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMOverpassServer.h; path = Model/MSMOverpassServer.h; sourceTree = "<group>"; };
+		01DDB58C1921C9C70056B90B /* MSMOverpassServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMOverpassServer.m; path = Model/MSMOverpassServer.m; sourceTree = "<group>"; };
+		01E2BB2C18E2BAC000E6F8C3 /* MSMLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMLocationManager.h; sourceTree = "<group>"; };
+		01E2BB2D18E2BAC000E6F8C3 /* MSMLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMLocationManager.m; sourceTree = "<group>"; };
+		01E2BB2F18E2BDAD00E6F8C3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		01E4B37A1827FA5500D1905E /* MSMSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMSettingsViewController.h; path = ViewController/MSMSettingsViewController.h; sourceTree = "<group>"; };
+		01E4B37B1827FA5500D1905E /* MSMSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMSettingsViewController.m; path = ViewController/MSMSettingsViewController.m; sourceTree = "<group>"; };
+		01E4B37D182800C800D1905E /* MSMGlobalDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSMGlobalDefines.h; sourceTree = "<group>"; };
+		01EF82B918D5C08D00EEB8F1 /* MSMMapObjectDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMMapObjectDetailTableViewController.h; path = ViewController/MSMMapObjectDetailTableViewController.h; sourceTree = "<group>"; };
+		01EF82BA18D5C08D00EEB8F1 /* MSMMapObjectDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMMapObjectDetailTableViewController.m; path = ViewController/MSMMapObjectDetailTableViewController.m; sourceTree = "<group>"; };
+		01EF863118E071BC002186DF /* MSMCacheSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMCacheSettingsViewController.h; path = ViewController/MSMCacheSettingsViewController.h; sourceTree = "<group>"; };
+		01EF863218E071BC002186DF /* MSMCacheSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMCacheSettingsViewController.m; path = ViewController/MSMCacheSettingsViewController.m; sourceTree = "<group>"; };
+		01F67F0D20944C0B009F9313 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		07B318A683EDBF518B98106F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		0D60947339AE79DB401550F3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		173D44061E13F98A00B52C2D /* StyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleKit.swift; sourceTree = "<group>"; };
+		1C7A54C9A1563C6E6065F17E /* Pods-myseamap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myseamap.release.xcconfig"; path = "Pods/Target Support Files/Pods-myseamap/Pods-myseamap.release.xcconfig"; sourceTree = "<group>"; };
+		579862F7CD39208D0B1EC7AE /* Pods-myseamap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myseamap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myseamap/Pods-myseamap.debug.xcconfig"; sourceTree = "<group>"; };
+		67C40198FE927A4E553596BA /* libPods-myseamap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myseamap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8722594C270943E1B7BA4860 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0124F1561827D072002B0DC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01E2BB3018E2BDAD00E6F8C3 /* CoreLocation.framework in Frameworks */,
+				01CDE18D185F6DB500453B5F /* MobileCoreServices.framework in Frameworks */,
+				01CDE18B185F6DAD00453B5F /* SystemConfiguration.framework in Frameworks */,
+				0124F15F1827D072002B0DC7 /* CoreGraphics.framework in Frameworks */,
+				0124F1611827D072002B0DC7 /* UIKit.framework in Frameworks */,
+				0124F1951827D135002B0DC7 /* MapKit.framework in Frameworks */,
+				0124F15D1827D072002B0DC7 /* Foundation.framework in Frameworks */,
+				66D7459C815EF60CE79AF5CD /* libPods-myseamap.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0121BAF220943D4700F21903 /* Flyover */ = {
+			isa = PBXGroup;
+			children = (
+				0121BAF320943D4700F21903 /* FORelation.h */,
+				0121BAF420943D4700F21903 /* FOQueryManager.h */,
+				0121BAF520943D4700F21903 /* FONode.h */,
+				0121BAF620943D4700F21903 /* FOWay.h */,
+				0121BAF720943D4700F21903 /* FOFlyover.h */,
+				0121BAF820943D4700F21903 /* FONode.m */,
+				0121BAF920943D4700F21903 /* FOQueryManager.m */,
+				0121BAFA20943D4700F21903 /* FORelation.m */,
+				0121BAFB20943D4700F21903 /* FOWay.m */,
+			);
+			path = Flyover;
+			sourceTree = "<group>";
+		};
+		0124F1501827D072002B0DC7 = {
+			isa = PBXGroup;
+			children = (
+				0124F1621827D072002B0DC7 /* mySeaMap */,
+				0124F15B1827D072002B0DC7 /* Frameworks */,
+				0124F15A1827D072002B0DC7 /* Products */,
+				B5648C8CDCE95A4EBE3F8E04 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		0124F15A1827D072002B0DC7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0124F1591827D072002B0DC7 /* myseamap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0124F15B1827D072002B0DC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				013B005E192CD4D900665BB6 /* CoreData.framework */,
+				01E2BB2F18E2BDAD00E6F8C3 /* CoreLocation.framework */,
+				01CDE18C185F6DB500453B5F /* MobileCoreServices.framework */,
+				01CDE18A185F6DAD00453B5F /* SystemConfiguration.framework */,
+				0124F1941827D135002B0DC7 /* MapKit.framework */,
+				0124F15C1827D072002B0DC7 /* Foundation.framework */,
+				0124F15E1827D072002B0DC7 /* CoreGraphics.framework */,
+				0124F1601827D072002B0DC7 /* UIKit.framework */,
+				0124F17E1827D072002B0DC7 /* XCTest.framework */,
+				8722594C270943E1B7BA4860 /* libPods.a */,
+				67C40198FE927A4E553596BA /* libPods-myseamap.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0124F1621827D072002B0DC7 /* mySeaMap */ = {
+			isa = PBXGroup;
+			children = (
+				01B9F4631953200000F9045E /* Storyboards */,
+				0199FD7F1951E6BE00E13FD2 /* ExternalScreen */,
+				01880197182C303600C82E58 /* MSMUtils.h */,
+				01880198182C303600C82E58 /* MSMUtils.m */,
+				01E4B37D182800C800D1905E /* MSMGlobalDefines.h */,
+				013956E8182D26C500833CB4 /* Model */,
+				01AC316D18296CB00092EC8E /* Views */,
+				0124F1961827D3F9002B0DC7 /* ViewController */,
+				0124F16B1827D072002B0DC7 /* MSMAppDelegate.h */,
+				0124F16C1827D072002B0DC7 /* MSMAppDelegate.m */,
+				173D44061E13F98A00B52C2D /* StyleKit.swift */,
+				0124F1771827D072002B0DC7 /* Images.xcassets */,
+				0121BAF220943D4700F21903 /* Flyover */,
+				0124F1631827D072002B0DC7 /* Supporting Files */,
+			);
+			path = mySeaMap;
+			sourceTree = "<group>";
+		};
+		0124F1631827D072002B0DC7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01F67F0D20944C0B009F9313 /* LICENSE */,
+				011272BF1DE3705F00E41E8F /* myseamap-Bridging-Header.h */,
+				01817CEF1D9254E000ABC181 /* mySeaMap.xcdatamodeld */,
+				011DB2241921547500AAEDC9 /* myseamap.json */,
+				0160A5AB193E108500FD1B5A /* mapsources.json */,
+				01BE39E5182BE396008DE2C8 /* about.html */,
+				0124F1641827D072002B0DC7 /* mySeaMap-Info.plist */,
+				0124F1651827D072002B0DC7 /* InfoPlist.strings */,
+				0124F1681827D072002B0DC7 /* main.m */,
+				0124F16A1827D072002B0DC7 /* mySeaMap-Prefix.pch */,
+				01BE39EC182BEE7E008DE2C8 /* Localizable.strings */,
+				013929F01BBA8C95004697D3 /* Launch Screen.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0124F1961827D3F9002B0DC7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0124F1741827D072002B0DC7 /* MSMViewController.h */,
+				0124F1751827D072002B0DC7 /* MSMViewController.m */,
+				01AD59021DEAF6D300F0CBB8 /* MSMViewControllerExtension.swift */,
+				01115FC6182AD9F900F14144 /* MSMAboutViewController.h */,
+				01115FC7182AD9F900F14144 /* MSMAboutViewController.m */,
+				016C2E56184E605C0097B58E /* MSMMapObjectRawDataViewController.h */,
+				016C2E57184E605C0097B58E /* MSMMapObjectRawDataViewController.m */,
+				01A12EEB18D44160000BCDDD /* MSMSearchViewController.h */,
+				01A12EEC18D44160000BCDDD /* MSMSearchViewController.m */,
+				01EF82B918D5C08D00EEB8F1 /* MSMMapObjectDetailTableViewController.h */,
+				01EF82BA18D5C08D00EEB8F1 /* MSMMapObjectDetailTableViewController.m */,
+				01E4B37A1827FA5500D1905E /* MSMSettingsViewController.h */,
+				01E4B37B1827FA5500D1905E /* MSMSettingsViewController.m */,
+				01EF863118E071BC002186DF /* MSMCacheSettingsViewController.h */,
+				01EF863218E071BC002186DF /* MSMCacheSettingsViewController.m */,
+				010E35E719222148008E6F56 /* MSMZoomSettingsViewController.h */,
+				010E35E819222148008E6F56 /* MSMZoomSettingsViewController.m */,
+				01B9F4671953226200F9045E /* MSMBaseMapViewController.h */,
+				01B9F4681953226200F9045E /* MSMBaseMapViewController.m */,
+				0172E7821D939D9B00A5C1D2 /* MSMTrackListTableViewController.h */,
+				0172E7831D939D9B00A5C1D2 /* MSMTrackListTableViewController.m */,
+				0174C7501D97A76C001EA410 /* MSMTrackDetailTableViewController.h */,
+				0174C7511D97A76C001EA410 /* MSMTrackDetailTableViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		013956E8182D26C500833CB4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				017860811D92B83B0078F2B6 /* Tracking */,
+				01CE038119262483002EA145 /* Features */,
+				01E2BB2B18E2BAC000E6F8C3 /* Location */,
+				016B1F8B18DD6B17004D58E6 /* Offline Maps */,
+				016B1F8718DD5AC9004D58E6 /* MapLayer */,
+				01D0BE0318D2169B007ED53A /* MapObjects */,
+				018ADEB018D0347E0067B512 /* Overpass */,
+				013956E9182D26F700833CB4 /* FBGeoValue.h */,
+				013956EA182D26F700833CB4 /* FBGeoValue.m */,
+				013956EC182D2FDD00833CB4 /* FBGeoLocation.h */,
+				013956ED182D2FDD00833CB4 /* FBGeoLocation.m */,
+				011EF42D18636431009B0520 /* FBGeoRegion.h */,
+				011EF42E18636431009B0520 /* FBGeoRegion.m */,
+				016414E6183125F10036610E /* MSMGeoUtils.h */,
+				016414E7183125F10036610E /* MSMGeoUtils.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		016B1F8718DD5AC9004D58E6 /* MapLayer */ = {
+			isa = PBXGroup;
+			children = (
+				016B1F8818DD5C92004D58E6 /* MSMCachedTileOverlay.h */,
+				016B1F8918DD5C92004D58E6 /* MSMCachedTileOverlay.m */,
+				0160A5A8193E0E6900FD1B5A /* MSMMapSource.h */,
+				0160A5A9193E0E6900FD1B5A /* MSMMapSource.m */,
+			);
+			name = MapLayer;
+			sourceTree = "<group>";
+		};
+		016B1F8B18DD6B17004D58E6 /* Offline Maps */ = {
+			isa = PBXGroup;
+			children = (
+				01AC402E185C85B500EF2AF7 /* FBTile.h */,
+				01AC402F185C85B500EF2AF7 /* FBTile.m */,
+				01A98948185F0C5D00AA672C /* MSMPolygonRenderer.h */,
+				01A98949185F0C5D00AA672C /* MSMPolygonRenderer.m */,
+			);
+			name = "Offline Maps";
+			sourceTree = "<group>";
+		};
+		017860811D92B83B0078F2B6 /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				017860821D92BAE50078F2B6 /* ManagedObjects */,
+				0178608F1D92BCEC0078F2B6 /* MSMTrackManager.h */,
+				017860901D92BCEC0078F2B6 /* MSMTrackManager.m */,
+				015ED24C1D98E2A60033075B /* MSMTrackExporter.h */,
+				015ED24D1D98E2A60033075B /* MSMTrackExporter.m */,
+				014418B21D9A924400DF32BF /* GPX.mustache */,
+				014418B41D9A97FB00DF32BF /* MSMGPXExporter.h */,
+				014418B51D9A97FB00DF32BF /* MSMGPXExporter.m */,
+			);
+			name = Tracking;
+			sourceTree = "<group>";
+		};
+		017860821D92BAE50078F2B6 /* ManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				017860831D92BB660078F2B6 /* TrackEntry+CoreDataProperties.h */,
+				017860841D92BB660078F2B6 /* TrackEntry+CoreDataProperties.m */,
+				017860851D92BB660078F2B6 /* TrackEntry.h */,
+				017860861D92BB660078F2B6 /* TrackEntry.m */,
+				017860871D92BB660078F2B6 /* Track+CoreDataProperties.h */,
+				017860881D92BB660078F2B6 /* Track+CoreDataProperties.m */,
+				017860891D92BB660078F2B6 /* Track.h */,
+				0178608A1D92BB660078F2B6 /* Track.m */,
+			);
+			name = ManagedObjects;
+			sourceTree = "<group>";
+		};
+		018ADEB018D0347E0067B512 /* Overpass */ = {
+			isa = PBXGroup;
+			children = (
+				01C69EC018CF74EE0028DF28 /* MSMCache.h */,
+				01C69EC118CF74EE0028DF28 /* MSMCache.m */,
+				01AD4C03184CFDD800AA9F31 /* MSMOverPassQuery.h */,
+				01AD4C04184CFDD800AA9F31 /* MSMOverPassQuery.m */,
+				01DDB58B1921C9C70056B90B /* MSMOverpassServer.h */,
+				01DDB58C1921C9C70056B90B /* MSMOverpassServer.m */,
+				0181AFB8184DB9AC002DCCA9 /* FBOSMNode.h */,
+				0181AFB9184DB9AC002DCCA9 /* FBOSMNode.m */,
+				01BB24B318D309C6005C4E5C /* FBOSMWay.m */,
+				01BB24B218D309C6005C4E5C /* FBOSMWay.h */,
+			);
+			name = Overpass;
+			sourceTree = "<group>";
+		};
+		0199FD7F1951E6BE00E13FD2 /* ExternalScreen */ = {
+			isa = PBXGroup;
+			children = (
+				0199FD801951E74E00E13FD2 /* MSMExternalScreen.h */,
+				0199FD811951E74E00E13FD2 /* MSMExternalScreen.m */,
+				01B9F46A195322F800F9045E /* MSMExternalScreenMapViewController.h */,
+				01B9F46B195322F800F9045E /* MSMExternalScreenMapViewController.m */,
+			);
+			name = ExternalScreen;
+			sourceTree = "<group>";
+		};
+		01AC316D18296CB00092EC8E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				01AC316E18296CFA0092EC8E /* MSMMapControlsView.h */,
+				01AC316F18296CFA0092EC8E /* MSMMapControlsView.m */,
+				01A378E118E56DEA00D650BC /* MSMCrossHairsView.h */,
+				01A378E218E56DEA00D650BC /* MSMCrossHairsView.m */,
+				01B5BDE018FFA30F007493BB /* MSMShipView.h */,
+				01B5BDE118FFA30F007493BB /* MSMShipView.m */,
+				0174C7531D97A97E001EA410 /* MSMTrackListTableViewCell.h */,
+				0174C7541D97A97E001EA410 /* MSMTrackListTableViewCell.m */,
+				018C996B1DDA00A800F93985 /* MSMInstrumentsView.h */,
+				018C996C1DDA00A800F93985 /* MSMInstrumentsView.m */,
+				011272C21DE370D100E41E8F /* MSMScaleView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		01B9F4631953200000F9045E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0124F1711827D072002B0DC7 /* Main.storyboard */,
+				01B9F4641953204400F9045E /* ExternalScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		01CD0C2D18DC1E8B00DEC6C9 /* Formatter */ = {
+			isa = PBXGroup;
+			children = (
+				01A72FBF18DCC4780051FC64 /* MSMTimesFormatter.h */,
+				01A72FC018DCC4780051FC64 /* MSMTimesFormatter.m */,
+				01CD0C2A18DC1BD000DEC6C9 /* MSMValueFormatter.h */,
+				01CD0C2B18DC1BD000DEC6C9 /* MSMValueFormatter.m */,
+				01CD0C2E18DC1EE800DEC6C9 /* MSMMetricsFormatter.h */,
+				01CD0C2F18DC1EE800DEC6C9 /* MSMMetricsFormatter.m */,
+			);
+			name = Formatter;
+			sourceTree = "<group>";
+		};
+		01CD0C3118DC1F0000DEC6C9 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				01D0BE0418D216C6007ED53A /* MSMMapObject.h */,
+				01D0BE0518D216C6007ED53A /* MSMMapObject.m */,
+				01BB24A918D2E5A5005C4E5C /* MSMNavigationalObject.h */,
+				01BB24AA18D2E5A5005C4E5C /* MSMNavigationalObject.m */,
+				01D0BE0718D21729007ED53A /* MSMHarbour.h */,
+				01D0BE0818D21729007ED53A /* MSMHarbour.m */,
+				01D0BE0A18D22998007ED53A /* MSMBridge.h */,
+				01D0BE0B18D22998007ED53A /* MSMBridge.m */,
+				01CD9B2A18D898030049149C /* MSMLockBasin.h */,
+				01CD9B2B18D898030049149C /* MSMLockBasin.m */,
+				01BB24B518D34E32005C4E5C /* MSMSmallCraftFacility.h */,
+				01BB24B618D34E32005C4E5C /* MSMSmallCraftFacility.m */,
+				01BB24AC18D2E655005C4E5C /* MSMBuoyLateral.h */,
+				01BB24AD18D2E655005C4E5C /* MSMBuoyLateral.m */,
+				01BB24AF18D2FCC7005C4E5C /* MSMBuoyCardinal.h */,
+				01BB24B018D2FCC7005C4E5C /* MSMBuoyCardinal.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		01CE038119262483002EA145 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				01CE0382192624B7002EA145 /* MSMFeatureManager.h */,
+				01CE0383192624B7002EA145 /* MSMFeatureManager.m */,
+			);
+			name = Features;
+			sourceTree = "<group>";
+		};
+		01D0BE0318D2169B007ED53A /* MapObjects */ = {
+			isa = PBXGroup;
+			children = (
+				01CD0C3118DC1F0000DEC6C9 /* Objects */,
+				01CD0C2D18DC1E8B00DEC6C9 /* Formatter */,
+				0185317D18D60405007E96E6 /* MSMInfoGroup.h */,
+				0185317E18D60405007E96E6 /* MSMInfoGroup.m */,
+			);
+			name = MapObjects;
+			sourceTree = "<group>";
+		};
+		01E2BB2B18E2BAC000E6F8C3 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				01E2BB2C18E2BAC000E6F8C3 /* MSMLocationManager.h */,
+				01E2BB2D18E2BAC000E6F8C3 /* MSMLocationManager.m */,
+			);
+			name = Location;
+			path = Model/Tracking;
+			sourceTree = "<group>";
+		};
+		B5648C8CDCE95A4EBE3F8E04 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D60947339AE79DB401550F3 /* Pods.debug.xcconfig */,
+				07B318A683EDBF518B98106F /* Pods.release.xcconfig */,
+				579862F7CD39208D0B1EC7AE /* Pods-myseamap.debug.xcconfig */,
+				1C7A54C9A1563C6E6065F17E /* Pods-myseamap.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0124F1581827D072002B0DC7 /* myseamap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0124F18E1827D072002B0DC7 /* Build configuration list for PBXNativeTarget "myseamap" */;
+			buildPhases = (
+				6FF42DC35674412085A3EB75 /* [CP] Check Pods Manifest.lock */,
+				0124F1551827D072002B0DC7 /* Sources */,
+				0124F1561827D072002B0DC7 /* Frameworks */,
+				0124F1571827D072002B0DC7 /* Resources */,
+				9AF253165D24497B91E8081A /* [CP] Copy Pods Resources */,
+				FAC65CE50DEFCDC5471C609B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = myseamap;
+			productName = mySeaMap;
+			productReference = 0124F1591827D072002B0DC7 /* myseamap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0124F1511827D072002B0DC7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MSM;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Frank Budszuhn";
+				TargetAttributes = {
+					0124F1581827D072002B0DC7 = {
+						LastSwiftMigration = 0810;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 0124F1541827D072002B0DC7 /* Build configuration list for PBXProject "mySeaMap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				de,
+			);
+			mainGroup = 0124F1501827D072002B0DC7;
+			productRefGroup = 0124F15A1827D072002B0DC7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0124F1581827D072002B0DC7 /* myseamap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0124F1571827D072002B0DC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01BE39E3182BE396008DE2C8 /* about.html in Resources */,
+				0124F1731827D072002B0DC7 /* Main.storyboard in Resources */,
+				01B9F4661953204400F9045E /* ExternalScreen.storyboard in Resources */,
+				0124F1781827D072002B0DC7 /* Images.xcassets in Resources */,
+				01BE39EA182BEE7E008DE2C8 /* Localizable.strings in Resources */,
+				011DB2251921547500AAEDC9 /* myseamap.json in Resources */,
+				0124F1671827D072002B0DC7 /* InfoPlist.strings in Resources */,
+				0160A5AC193E108500FD1B5A /* mapsources.json in Resources */,
+				014418B31D9A924400DF32BF /* GPX.mustache in Resources */,
+				013929F11BBA8C95004697D3 /* Launch Screen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6FF42DC35674412085A3EB75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-myseamap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9AF253165D24497B91E8081A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myseamap/Pods-myseamap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAC65CE50DEFCDC5471C609B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myseamap/Pods-myseamap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0124F1551827D072002B0DC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01D0BE0C18D22998007ED53A /* MSMBridge.m in Sources */,
+				0121BAFC20943D4700F21903 /* FONode.m in Sources */,
+				01A378E318E56DEA00D650BC /* MSMCrossHairsView.m in Sources */,
+				01BB24B418D309C6005C4E5C /* FBOSMWay.m in Sources */,
+				01A12EED18D44160000BCDDD /* MSMSearchViewController.m in Sources */,
+				013956EE182D2FDD00833CB4 /* FBGeoLocation.m in Sources */,
+				0174C7551D97A97E001EA410 /* MSMTrackListTableViewCell.m in Sources */,
+				0181AFBA184DB9AC002DCCA9 /* FBOSMNode.m in Sources */,
+				018C996D1DDA00A800F93985 /* MSMInstrumentsView.m in Sources */,
+				0124F1761827D072002B0DC7 /* MSMViewController.m in Sources */,
+				01BB24AB18D2E5A5005C4E5C /* MSMNavigationalObject.m in Sources */,
+				0124F16D1827D072002B0DC7 /* MSMAppDelegate.m in Sources */,
+				0178608D1D92BB660078F2B6 /* Track+CoreDataProperties.m in Sources */,
+				0174C7521D97A76C001EA410 /* MSMTrackDetailTableViewController.m in Sources */,
+				011272C31DE370D100E41E8F /* MSMScaleView.swift in Sources */,
+				01D0BE0618D216C6007ED53A /* MSMMapObject.m in Sources */,
+				010E35E919222148008E6F56 /* MSMZoomSettingsViewController.m in Sources */,
+				01AD59031DEAF6D300F0CBB8 /* MSMViewControllerExtension.swift in Sources */,
+				01CD0C2C18DC1BD000DEC6C9 /* MSMValueFormatter.m in Sources */,
+				01AC317018296CFA0092EC8E /* MSMMapControlsView.m in Sources */,
+				01B9F46C195322F800F9045E /* MSMExternalScreenMapViewController.m in Sources */,
+				01BB24B118D2FCC7005C4E5C /* MSMBuoyCardinal.m in Sources */,
+				01BB24B718D34E32005C4E5C /* MSMSmallCraftFacility.m in Sources */,
+				0185317F18D60405007E96E6 /* MSMInfoGroup.m in Sources */,
+				01EF863318E071BC002186DF /* MSMCacheSettingsViewController.m in Sources */,
+				0121BAFD20943D4700F21903 /* FOQueryManager.m in Sources */,
+				0124F1691827D072002B0DC7 /* main.m in Sources */,
+				0160A5AA193E0E6900FD1B5A /* MSMMapSource.m in Sources */,
+				016414E8183125F10036610E /* MSMGeoUtils.m in Sources */,
+				01115FC8182AD9F900F14144 /* MSMAboutViewController.m in Sources */,
+				0121BAFE20943D4700F21903 /* FORelation.m in Sources */,
+				014418B61D9A97FB00DF32BF /* MSMGPXExporter.m in Sources */,
+				0121BAFF20943D4700F21903 /* FOWay.m in Sources */,
+				01D0BE0918D21729007ED53A /* MSMHarbour.m in Sources */,
+				01CD0C3018DC1EE800DEC6C9 /* MSMMetricsFormatter.m in Sources */,
+				015ED24E1D98E2A60033075B /* MSMTrackExporter.m in Sources */,
+				01A9894A185F0C5D00AA672C /* MSMPolygonRenderer.m in Sources */,
+				01DDB58D1921C9C70056B90B /* MSMOverpassServer.m in Sources */,
+				01B9F4691953226200F9045E /* MSMBaseMapViewController.m in Sources */,
+				01817CF11D9254E000ABC181 /* mySeaMap.xcdatamodeld in Sources */,
+				01C69EC218CF74EE0028DF28 /* MSMCache.m in Sources */,
+				01EF82BB18D5C08D00EEB8F1 /* MSMMapObjectDetailTableViewController.m in Sources */,
+				01CE0384192624B7002EA145 /* MSMFeatureManager.m in Sources */,
+				0172E7841D939D9B00A5C1D2 /* MSMTrackListTableViewController.m in Sources */,
+				01880199182C303600C82E58 /* MSMUtils.m in Sources */,
+				0199FD821951E74E00E13FD2 /* MSMExternalScreen.m in Sources */,
+				01AD4C05184CFDD800AA9F31 /* MSMOverPassQuery.m in Sources */,
+				0178608B1D92BB660078F2B6 /* TrackEntry+CoreDataProperties.m in Sources */,
+				01E2BB2E18E2BAC000E6F8C3 /* MSMLocationManager.m in Sources */,
+				017860911D92BCEC0078F2B6 /* MSMTrackManager.m in Sources */,
+				01E4B37C1827FA5500D1905E /* MSMSettingsViewController.m in Sources */,
+				013956EB182D26F700833CB4 /* FBGeoValue.m in Sources */,
+				01AC4030185C85B500EF2AF7 /* FBTile.m in Sources */,
+				01B5BDE218FFA30F007493BB /* MSMShipView.m in Sources */,
+				016C2E58184E605C0097B58E /* MSMMapObjectRawDataViewController.m in Sources */,
+				0178608E1D92BB660078F2B6 /* Track.m in Sources */,
+				173D44071E13F98A00B52C2D /* StyleKit.swift in Sources */,
+				01BB24AE18D2E655005C4E5C /* MSMBuoyLateral.m in Sources */,
+				01CD9B2C18D898030049149C /* MSMLockBasin.m in Sources */,
+				016B1F8A18DD5C92004D58E6 /* MSMCachedTileOverlay.m in Sources */,
+				011EF42F18636431009B0520 /* FBGeoRegion.m in Sources */,
+				0178608C1D92BB660078F2B6 /* TrackEntry.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0124F1651827D072002B0DC7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0124F1661827D072002B0DC7 /* en */,
+				01BE39E1182BE37A008DE2C8 /* de */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0124F1711827D072002B0DC7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0124F1721827D072002B0DC7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		01B9F4641953204400F9045E /* ExternalScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01B9F4651953204400F9045E /* Base */,
+			);
+			name = ExternalScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		01BE39E5182BE396008DE2C8 /* about.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01BE39E6182BE3C8008DE2C8 /* en */,
+				01BE39E7182BE3C8008DE2C8 /* de */,
+			);
+			name = about.html;
+			sourceTree = "<group>";
+		};
+		01BE39EC182BEE7E008DE2C8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				01BE39ED182BEE8D008DE2C8 /* en */,
+				01BE39EE182BEE90008DE2C8 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0124F18C1827D072002B0DC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Frank Budszuhn (6BHPXBHYHS)";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0124F18D1827D072002B0DC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0124F18F1827D072002B0DC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 579862F7CD39208D0B1EC7AE /* Pods-myseamap.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mySeaMap/mySeaMap-Prefix.pch";
+				INFOPLIST_FILE = "mySeaMap/mySeaMap-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.budszuhn.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "mySeaMap/myseamap-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0124F1901827D072002B0DC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C7A54C9A1563C6E6065F17E /* Pods-myseamap.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mySeaMap/mySeaMap-Prefix.pch";
+				INFOPLIST_FILE = "mySeaMap/mySeaMap-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.budszuhn.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "mySeaMap/myseamap-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0124F1541827D072002B0DC7 /* Build configuration list for PBXProject "mySeaMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0124F18C1827D072002B0DC7 /* Debug */,
+				0124F18D1827D072002B0DC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0124F18E1827D072002B0DC7 /* Build configuration list for PBXNativeTarget "myseamap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0124F18F1827D072002B0DC7 /* Debug */,
+				0124F1901827D072002B0DC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		01817CEF1D9254E000ABC181 /* mySeaMap.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				01817CF01D9254E000ABC181 /* mySeaMap.xcdatamodel */,
+			);
+			currentVersion = 01817CF01D9254E000ABC181 /* mySeaMap.xcdatamodel */;
+			name = mySeaMap.xcdatamodeld;
+			path = Model/CoreData/mySeaMap.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 0124F1511827D072002B0DC7 /* Project object */;
+}

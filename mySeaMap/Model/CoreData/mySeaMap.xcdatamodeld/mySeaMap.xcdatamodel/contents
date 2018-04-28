@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G1004" minimumToolsVersion="Xcode 7.0" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Track" representedClassName="Track" syncable="YES">
+        <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="trackEntries" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="TrackEntry" inverseName="track" inverseEntity="TrackEntry" syncable="YES"/>
+    </entity>
+    <entity name="TrackEntry" representedClassName="TrackEntry" syncable="YES">
+        <attribute name="heading" optional="YES" attributeType="Integer 32" minValueString="0" maxValueString="359" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" minValueString="-90" maxValueString="90" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" minValueString="-180" maxValueString="180" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="speed" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="timeStamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="track" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Track" inverseName="trackEntries" inverseEntity="Track" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Track" positionX="-1512" positionY="-1494" width="128" height="90"/>
+        <element name="TrackEntry" positionX="-1179" positionY="-1539" width="128" height="135"/>
+    </elements>
+</model>
