@@ -9,13 +9,8 @@
 #import "MSMMapSource.h"
 
 
-#define TILE_SERVER_MAPQUEST                @"http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg"
 #define TILE_SERVER_MAPNIK                  @"http://a.tile.openstreetmap.org/{z}/{x}/{y}.png"
-
 #define TILE_SERVER_SEAMARKS                @"http://t1.openseamap.org/seamark/{z}/{x}/{y}.png"
-
-#define TILE_SERVER_GRADE                   @"http://tiles1.grade.de/tiles.py/cemt/{z}/{x}/{y}.png" // Fluss-Overlay, vielleicht irgend wann mal
-#define TILE_SERVER_SPORTS                  @"http://t1.openseamap.org/sport/{z}/{x}/{y}.png"       // vielleicht wollen wir es irgendwann ja doch
 
 
 @implementation MSMMapSource
