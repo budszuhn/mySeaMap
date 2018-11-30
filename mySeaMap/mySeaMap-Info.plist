@@ -6,21 +6,6 @@
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>mySeaMap</string>
-	<key>CFBundleDocumentTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeIconFiles</key>
-			<array>
-				<string>Icon120.png</string>
-			</array>
-			<key>CFBundleTypeName</key>
-			<string>MBTiles</string>
-			<key>LSItemContentTypes</key>
-			<array>
-				<string>com.budszuhn.mbtiles</string>
-			</array>
-		</dict>
-	</array>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIcons</key>
@@ -61,7 +46,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2.1</string>
+	<string>2.1.1</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
