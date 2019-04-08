@@ -38,7 +38,7 @@ public class StyleKit : NSObject {
 
     //// Drawing Methods
 
-    public dynamic class func drawCrossHair(frame: CGRect = CGRect(x: 0, y: 0, width: 21, height: 21), crossHairStrokeColor: UIColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000), crossHairStrokeWidth: CGFloat = 1) {
+    @objc public dynamic class func drawCrossHair(frame: CGRect = CGRect(x: 0, y: 0, width: 21, height: 21), crossHairStrokeColor: UIColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000), crossHairStrokeWidth: CGFloat = 1) {
         //// General Declarations
         // This non-generic function dramatically improves compilation times of complex expressions.
         func fastFloor(_ x: CGFloat) -> CGFloat { return floor(x) }
@@ -74,7 +74,7 @@ public class StyleKit : NSObject {
         ovalPath.stroke()
     }
 
-    public dynamic class func drawTrackingOn(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 22, height: 22), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawTrackingOn(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 22, height: 22), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -103,7 +103,7 @@ public class StyleKit : NSObject {
 
     }
 
-    public dynamic class func drawTrackingOff(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 22, height: 22), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawTrackingOff(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 22, height: 22), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -130,7 +130,7 @@ public class StyleKit : NSObject {
 
     }
 
-    public dynamic class func drawTrackingHeading(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 22, height: 22), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawTrackingHeading(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 22, height: 22), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -176,7 +176,7 @@ public class StyleKit : NSObject {
 
     }
 
-    public dynamic class func drawSettings(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 22, height: 22), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawSettings(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 22, height: 22), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -244,7 +244,7 @@ public class StyleKit : NSObject {
 
     }
 
-    public dynamic class func drawInstruments(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 22, height: 22), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawInstruments(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 22, height: 22), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -447,7 +447,7 @@ public class StyleKit : NSObject {
 
     }
 
-    public dynamic class func drawSearch(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 22, height: 22), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawSearch(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 22, height: 22), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -478,7 +478,7 @@ public class StyleKit : NSObject {
 
     }
 
-    public dynamic class func drawCanvas1(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 66, height: 64), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawCanvas1(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 66, height: 64), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -522,7 +522,7 @@ public class StyleKit : NSObject {
 
     }
 
-    public dynamic class func drawCollapse(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 22, height: 22), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawCollapse(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 22, height: 22), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -577,7 +577,7 @@ public class StyleKit : NSObject {
 
     }
 
-    public dynamic class func drawExpand(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 22, height: 22), resizing: ResizingBehavior = .aspectFit) {
+    @objc public dynamic class func drawExpand(frame targetFrame: CGRect = CGRect(x: 0, y: 0, width: 22, height: 22), resizing: ResizingBehavior = .aspectFit) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()!
         
@@ -634,7 +634,7 @@ public class StyleKit : NSObject {
 
     //// Generated Images
 
-    public dynamic class func imageOfCrossHair(imageSize: CGSize = CGSize(width: 21, height: 21), crossHairStrokeColor: UIColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000), crossHairStrokeWidth: CGFloat = 1) -> UIImage {
+    @objc public dynamic class func imageOfCrossHair(imageSize: CGSize = CGSize(width: 21, height: 21), crossHairStrokeColor: UIColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000), crossHairStrokeWidth: CGFloat = 1) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(imageSize, false, 0)
             StyleKit.drawCrossHair(frame: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height), crossHairStrokeColor: crossHairStrokeColor, crossHairStrokeWidth: crossHairStrokeWidth)
 
@@ -644,7 +644,7 @@ public class StyleKit : NSObject {
         return imageOfCrossHair
     }
 
-    public dynamic class var imageOfTrackingOn: UIImage {
+    @objc public dynamic class var imageOfTrackingOn: UIImage {
         if Cache.imageOfTrackingOn != nil {
             return Cache.imageOfTrackingOn!
         }
@@ -658,7 +658,7 @@ public class StyleKit : NSObject {
         return Cache.imageOfTrackingOn!
     }
 
-    public dynamic class var imageOfTrackingOff: UIImage {
+    @objc public dynamic class var imageOfTrackingOff: UIImage {
         if Cache.imageOfTrackingOff != nil {
             return Cache.imageOfTrackingOff!
         }
@@ -672,7 +672,7 @@ public class StyleKit : NSObject {
         return Cache.imageOfTrackingOff!
     }
 
-    public dynamic class var imageOfTrackingHeading: UIImage {
+    @objc public dynamic class var imageOfTrackingHeading: UIImage {
         if Cache.imageOfTrackingHeading != nil {
             return Cache.imageOfTrackingHeading!
         }
@@ -686,7 +686,7 @@ public class StyleKit : NSObject {
         return Cache.imageOfTrackingHeading!
     }
 
-    public dynamic class var imageOfSettings: UIImage {
+    @objc public dynamic class var imageOfSettings: UIImage {
         if Cache.imageOfSettings != nil {
             return Cache.imageOfSettings!
         }
@@ -700,7 +700,7 @@ public class StyleKit : NSObject {
         return Cache.imageOfSettings!
     }
 
-    public dynamic class var imageOfInstruments: UIImage {
+    @objc public dynamic class var imageOfInstruments: UIImage {
         if Cache.imageOfInstruments != nil {
             return Cache.imageOfInstruments!
         }
@@ -714,7 +714,7 @@ public class StyleKit : NSObject {
         return Cache.imageOfInstruments!
     }
 
-    public dynamic class var imageOfSearch: UIImage {
+    @objc public dynamic class var imageOfSearch: UIImage {
         if Cache.imageOfSearch != nil {
             return Cache.imageOfSearch!
         }
@@ -728,7 +728,7 @@ public class StyleKit : NSObject {
         return Cache.imageOfSearch!
     }
 
-    public dynamic class var imageOfCollapse: UIImage {
+    @objc public dynamic class var imageOfCollapse: UIImage {
         if Cache.imageOfCollapse != nil {
             return Cache.imageOfCollapse!
         }
@@ -742,7 +742,7 @@ public class StyleKit : NSObject {
         return Cache.imageOfCollapse!
     }
 
-    public dynamic class var imageOfExpand: UIImage {
+    @objc public dynamic class var imageOfExpand: UIImage {
         if Cache.imageOfExpand != nil {
             return Cache.imageOfExpand!
         }
