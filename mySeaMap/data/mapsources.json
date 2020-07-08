@@ -1,12 +1,7 @@
 {
     "apple-maps" : true,
     "myseamap-defaults" : true,
-     "_mapsources" : [
-           { "name" : "Stamen Toner", "type" : "background", "key" : "stamen", "url" : "http://b.tile.stamen.com/toner-lite/{z}/{x}/{y}.png"},
-           { "name" : "OSM Landscape", "type" : "background", "key" : "landscape", "url" : "http://c.tile3.opencyclemap.org/landscape/{z}/{x}/{y}.png"},
-           { "name" : "Roads grayscale","type" : "background", "key" : "roads-grayscale", "url" : "http://korona.geog.uni-heidelberg.de:8008/tms_rg.ashx?x={x}&y={y}&z={z}"},
-           { "name" : "Openriver Boatmap", "type" : "background", "key" : "openriverboatmap", "url" : "http://a.tile.openstreetmap.fr/openriverboatmap/{z}/{x}/{y}.png"},
-           { "name" : "Waze", "type" : "background", "key" : "waze", "url" : "http://worldtiles4.waze.com/tiles/{z}/{x}/{y}.png"},
-           { "name" : "ESRI gray", "type" : "background", "key" : "esri-gray", "flipped" : false, "url" : "http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}.jpg"},
+     "mapsources" : [
+           { "name" : "Stamen Toner", "type" : "background", "key" : "stamen", "url" : "http://b.tile.stamen.com/toner-lite/{z}/{x}/{y}.png"}
                      ]
  }
