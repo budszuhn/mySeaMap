@@ -226,6 +226,7 @@
 		01D0BE0818D21729007ED53A /* MSMHarbour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMHarbour.m; path = Model/MapObjects/MSMHarbour.m; sourceTree = "<group>"; };
 		01D0BE0A18D22998007ED53A /* MSMBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMBridge.h; path = Model/MapObjects/MSMBridge.h; sourceTree = "<group>"; };
 		01D0BE0B18D22998007ED53A /* MSMBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMBridge.m; path = Model/MapObjects/MSMBridge.m; sourceTree = "<group>"; };
+		01D6F70C24B5961D007D5CD3 /* myseamap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = myseamap.entitlements; path = myseamap/myseamap.entitlements; sourceTree = "<group>"; };
 		01DDB58B1921C9C70056B90B /* MSMOverpassServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMOverpassServer.h; path = Model/MSMOverpassServer.h; sourceTree = "<group>"; };
 		01DDB58C1921C9C70056B90B /* MSMOverpassServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMOverpassServer.m; path = Model/MSMOverpassServer.m; sourceTree = "<group>"; };
 		01E2BB2C18E2BAC000E6F8C3 /* MSMLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMLocationManager.h; sourceTree = "<group>"; };
@@ -286,6 +287,7 @@
 		0124F1501827D072002B0DC7 = {
 			isa = PBXGroup;
 			children = (
+				01D6F70C24B5961D007D5CD3 /* myseamap.entitlements */,
 				0124F1621827D072002B0DC7 /* mySeaMap */,
 				0124F15B1827D072002B0DC7 /* Frameworks */,
 				0124F15A1827D072002B0DC7 /* Products */,
@@ -629,6 +631,7 @@
 				ORGANIZATIONNAME = "Frank Budszuhn";
 				TargetAttributes = {
 					0124F1581827D072002B0DC7 = {
+						DevelopmentTeam = X7EV8WNP9F;
 						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -944,9 +947,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = myseamap/myseamap.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = X7EV8WNP9F;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mySeaMap/mySeaMap-Prefix.pch";
@@ -971,9 +976,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = myseamap/myseamap.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = X7EV8WNP9F;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mySeaMap/mySeaMap-Prefix.pch";
