@@ -51,7 +51,6 @@
 		01880199182C303600C82E58 /* MSMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01880198182C303600C82E58 /* MSMUtils.m */; };
 		018C996D1DDA00A800F93985 /* MSMInstrumentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 018C996C1DDA00A800F93985 /* MSMInstrumentsView.m */; };
 		0199FD821951E74E00E13FD2 /* MSMExternalScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 0199FD811951E74E00E13FD2 /* MSMExternalScreen.m */; };
-		01A12EED18D44160000BCDDD /* MSMSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A12EEC18D44160000BCDDD /* MSMSearchViewController.m */; };
 		01A378E318E56DEA00D650BC /* MSMCrossHairsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A378E218E56DEA00D650BC /* MSMCrossHairsView.m */; };
 		01A9894A185F0C5D00AA672C /* MSMPolygonRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A98949185F0C5D00AA672C /* MSMPolygonRenderer.m */; };
 		01AC317018296CFA0092EC8E /* MSMMapControlsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AC316F18296CFA0092EC8E /* MSMMapControlsView.m */; };
@@ -174,7 +173,6 @@
 		0199FD801951E74E00E13FD2 /* MSMExternalScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMExternalScreen.h; path = ExternalScreen/MSMExternalScreen.h; sourceTree = "<group>"; };
 		0199FD811951E74E00E13FD2 /* MSMExternalScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMExternalScreen.m; path = ExternalScreen/MSMExternalScreen.m; sourceTree = "<group>"; };
 		01A12EEB18D44160000BCDDD /* MSMSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMSearchViewController.h; path = ViewController/MSMSearchViewController.h; sourceTree = "<group>"; };
-		01A12EEC18D44160000BCDDD /* MSMSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMSearchViewController.m; path = ViewController/MSMSearchViewController.m; sourceTree = "<group>"; };
 		01A378E118E56DEA00D650BC /* MSMCrossHairsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMCrossHairsView.h; path = Views/MSMCrossHairsView.h; sourceTree = "<group>"; };
 		01A378E218E56DEA00D650BC /* MSMCrossHairsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMCrossHairsView.m; path = Views/MSMCrossHairsView.m; sourceTree = "<group>"; };
 		01A72FBF18DCC4780051FC64 /* MSMTimesFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMTimesFormatter.h; path = Model/MapObjects/MSMTimesFormatter.h; sourceTree = "<group>"; };
@@ -376,7 +374,6 @@
 				016C2E56184E605C0097B58E /* MSMMapObjectRawDataViewController.h */,
 				016C2E57184E605C0097B58E /* MSMMapObjectRawDataViewController.m */,
 				01A12EEB18D44160000BCDDD /* MSMSearchViewController.h */,
-				01A12EEC18D44160000BCDDD /* MSMSearchViewController.m */,
 				01CB86ED24BAF49B005381A7 /* MSMSearchController.swift */,
 				01EF82B918D5C08D00EEB8F1 /* MSMMapObjectDetailTableViewController.h */,
 				01EF82BA18D5C08D00EEB8F1 /* MSMMapObjectDetailTableViewController.m */,
@@ -751,7 +748,6 @@
 				0121BAFC20943D4700F21903 /* FONode.m in Sources */,
 				01A378E318E56DEA00D650BC /* MSMCrossHairsView.m in Sources */,
 				01BB24B418D309C6005C4E5C /* FBOSMWay.m in Sources */,
-				01A12EED18D44160000BCDDD /* MSMSearchViewController.m in Sources */,
 				013956EE182D2FDD00833CB4 /* FBGeoLocation.m in Sources */,
 				0174C7551D97A97E001EA410 /* MSMTrackListTableViewCell.m in Sources */,
 				0181AFBA184DB9AC002DCCA9 /* FBOSMNode.m in Sources */,
@@ -958,7 +954,7 @@
 				CODE_SIGN_ENTITLEMENTS = myseamap/myseamap.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = X7EV8WNP9F;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -966,7 +962,7 @@
 				INFOPLIST_FILE = "mySeaMap/mySeaMap-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.2.1;
+				MARKETING_VERSION = 2.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.budszuhn.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -988,7 +984,7 @@
 				CODE_SIGN_ENTITLEMENTS = myseamap/myseamap.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = X7EV8WNP9F;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -996,7 +992,7 @@
 				INFOPLIST_FILE = "mySeaMap/mySeaMap-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.2.1;
+				MARKETING_VERSION = 2.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.budszuhn.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
