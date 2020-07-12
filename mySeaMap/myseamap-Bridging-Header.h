@@ -3,3 +3,4 @@
 //
 
 #import "MSMViewController.h"
+#import "MSMSearchViewController.h"

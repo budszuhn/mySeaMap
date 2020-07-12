@@ -620,7 +620,7 @@
     else if ([segue.identifier isEqualToString:SEGUE_SEARCH]) {
         
         MSMSearchController *searchVC = segue.destinationViewController;
-        //searchVC.delegate = self;
+        searchVC.delegate = self;
     }
     else if ([segue.identifier isEqualToString:SEGUE_ABOUT] && [MSMUtils isIPad]) {
         UINavigationController *navCtr = segue.destinationViewController;

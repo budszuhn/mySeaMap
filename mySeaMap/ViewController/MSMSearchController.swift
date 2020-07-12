@@ -8,11 +8,12 @@
 
 import UIKit
 
-class MSMSearchController: UITableViewController, UISearchResultsUpdating {
+class MSMSearchController: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
     
     let searchController = UISearchController(searchResultsController: nil)
     
     var placemarks: [CLPlacemark]?
+    @objc var delegate: MSMSearchViewControllerDelegate?
 
 
     override func viewDidLoad() {
@@ -20,11 +21,17 @@ class MSMSearchController: UITableViewController, UISearchResultsUpdating {
 
         // setup search controller
         searchController.searchResultsUpdater = self
-        //searchController.hidesNavigationBarDuringPresentation = false
-        searchController.dimsBackgroundDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
+        searchController.searchBar.showsCancelButton = true
 
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    
+        delegate?.searchDone()
     }
 
     // MARK: - UISearchResultsUpdating
@@ -62,6 +69,14 @@ class MSMSearchController: UITableViewController, UISearchResultsUpdating {
         return cell
     }
 
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let placemark = placemarks?[indexPath.row] {
+            
+            delegate?.setPlacemark(placemark)
+        }
+    }
   
  
     fileprivate func performSearch(searchString: String) {
