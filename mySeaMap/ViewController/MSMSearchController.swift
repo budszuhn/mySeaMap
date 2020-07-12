@@ -3,15 +3,17 @@
 //  myseamap
 //
 //  Created by Frank Budszuhn on 12.07.20.
-//  Copyright © 2020 Frank Budszuhn. All rights reserved.
+//  Copyright © 2020 Frank Budszuhn. See LICENSE.
 //
 
 import UIKit
 
 class MSMSearchController: UITableViewController, UISearchResultsUpdating {
     
-
     let searchController = UISearchController(searchResultsController: nil)
+    
+    var placemarks: [CLPlacemark]?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,80 +21,71 @@ class MSMSearchController: UITableViewController, UISearchResultsUpdating {
         // setup search controller
         searchController.searchResultsUpdater = self
         //searchController.hidesNavigationBarDuringPresentation = false
+        searchController.dimsBackgroundDuringPresentation = false
+
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
     }
 
+    // MARK: - UISearchResultsUpdating
+    
     func updateSearchResults(for searchController: UISearchController) {
         
-        print("update search results")
+        if let searchString = searchController.searchBar.text {
+            
+            performSearch(searchString: searchString)
+        }
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+
+        return placemarks?.count ?? 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "search-cell", for: indexPath)
 
-        // Configure the cell...
+        if let placemark = placemarks?[indexPath.row] {
+            
+            cell.textLabel?.text = placemark.locality
+        }
 
         return cell
     }
-    */
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+  
+ 
+    fileprivate func performSearch(searchString: String) {
+        
+        guard searchString.count > 2 else {
+            self.placemarks = nil
+            self.tableView.reloadData()
+            return
+        }
+        
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(searchString) { [unowned self] (placeMarkArray, error) in
+            if error != nil {
+                print("Error in search : \(String(describing: error))")
+            }
+            
+            if let placeMarks = placeMarkArray {
+                
+                DispatchQueue.main.async { [unowned self] in
+                    self.placemarks = placeMarks
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

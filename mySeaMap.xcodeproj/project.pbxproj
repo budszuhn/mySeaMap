@@ -375,6 +375,7 @@
 				016C2E57184E605C0097B58E /* MSMMapObjectRawDataViewController.m */,
 				01A12EEB18D44160000BCDDD /* MSMSearchViewController.h */,
 				01A12EEC18D44160000BCDDD /* MSMSearchViewController.m */,
+				01CB86ED24BAF49B005381A7 /* MSMSearchController.swift */,
 				01EF82B918D5C08D00EEB8F1 /* MSMMapObjectDetailTableViewController.h */,
 				01EF82BA18D5C08D00EEB8F1 /* MSMMapObjectDetailTableViewController.m */,
 				01E4B37A1827FA5500D1905E /* MSMSettingsViewController.h */,
@@ -389,7 +390,6 @@
 				0172E7831D939D9B00A5C1D2 /* MSMTrackListTableViewController.m */,
 				0174C7501D97A76C001EA410 /* MSMTrackDetailTableViewController.h */,
 				0174C7511D97A76C001EA410 /* MSMTrackDetailTableViewController.m */,
-				01CB86ED24BAF49B005381A7 /* MSMSearchController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
