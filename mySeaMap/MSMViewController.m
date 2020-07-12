@@ -3,7 +3,7 @@
 //  mySeaMap
 //
 //  Created by Frank Budszuhn on 04.11.13.
-//  Copyright (c) 2013 - 2017 Frank Budszuhn. See LICENSE.
+//  Copyright (c) 2013 - 2020 Frank Budszuhn. See LICENSE.
 //
 
 @import SafariServices;
@@ -73,8 +73,8 @@
 
 
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     // NavBar und ToolBar einrichten
     [self setupBars];
     
@@ -221,8 +221,8 @@
 }
 
 
-- (void) setupBars
-{
+- (void) setupBars {
+    
     // ToolBar
     self.mapInfoItem.title = nil;
     
@@ -384,7 +384,6 @@
     geoLocation.coordinate = [self mapCenterCoordinate];
 
     UIPasteboard *appPasteBoard = [UIPasteboard generalPasteboard];
-    appPasteBoard.persistent = YES;
     [appPasteBoard setString: [geoLocation pasteboardRepresentation]];
     
     [LSMessageHUD showWithMessage: NSLocalizedString(@"COPY_MESSAGE", nil)];
@@ -618,10 +617,10 @@
         mapObjectVC.mapObject = sender;
         // FIXME: mapObjectVC.delegate = self;
     }
-    else if ([segue.identifier isEqualToString:SEGUE_SEARCH])
-    {
-        MSMSearchViewController *searchVC = segue.destinationViewController;
-        searchVC.delegate = self;
+    else if ([segue.identifier isEqualToString:SEGUE_SEARCH]) {
+        
+        MSMSearchController *searchVC = segue.destinationViewController;
+        //searchVC.delegate = self;
     }
     else if ([segue.identifier isEqualToString:SEGUE_ABOUT] && [MSMUtils isIPad]) {
         UINavigationController *navCtr = segue.destinationViewController;

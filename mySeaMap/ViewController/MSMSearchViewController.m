@@ -3,14 +3,15 @@
 //  mySeaMap
 //
 //  Created by Frank Budszuhn on 15.03.14.
-//  Copyright (c) 2014 Frank Budszuhn. See LICENSE.
+//  Copyright (c) 2014 - 2020 Frank Budszuhn. See LICENSE.
 //
 
 #import "MSMSearchViewController.h"
 
-@interface MSMSearchViewController () <UISearchBarDelegate, UISearchDisplayDelegate>
+@interface MSMSearchViewController () <UISearchBarDelegate>
 
 @property (nonatomic, strong) NSArray *searchResultsPlaces;
+@property (nonatomic, strong) UISearchController *searchController;
 
 @end
 
@@ -29,18 +30,23 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.searchResultsUpdater = self;
+    //self.searchController.dimsBackgroundDuringPresentation = NO; // TODO: mal sehen
+    self.searchController.searchBar.delegate = self;
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    [self.searchDisplayController.searchBar becomeFirstResponder];
+    //##[self.searchDisplayController.searchBar becomeFirstResponder];
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
 {
-    [self.searchDisplayController setActive: NO animated: NO];
+    //##[self.searchDisplayController setActive: NO animated: NO];
     [self.delegate searchDone];
 }
 
@@ -75,7 +81,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.searchDisplayController setActive: NO animated: YES];
+    //##[self.searchDisplayController setActive: NO animated: YES];
     
     // so, jetzt hin da:
     CLPlacemark *placemark = [self.searchResultsPlaces objectAtIndex: indexPath.row];
@@ -92,7 +98,7 @@
     [gc geocodeAddressString:searchString completionHandler:^(NSArray *placemarks, NSError *error) {
         
         weakSelf.searchResultsPlaces = placemarks;
-        [weakSelf.searchDisplayController.searchResultsTableView reloadData];
+        //##[weakSelf.searchDisplayController.searchResultsTableView reloadData];
         
     }];
     
