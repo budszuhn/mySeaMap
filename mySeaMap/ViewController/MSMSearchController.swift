@@ -56,6 +56,7 @@ class MSMSearchController: UITableViewController, UISearchResultsUpdating {
         if let placemark = placemarks?[indexPath.row] {
             
             cell.textLabel?.text = placemark.locality
+            cell.detailTextLabel?.text = placemark.formattedPlacemark()
         }
 
         return cell

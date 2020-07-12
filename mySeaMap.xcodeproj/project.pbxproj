@@ -71,6 +71,7 @@
 		01BE39EA182BEE7E008DE2C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01BE39EC182BEE7E008DE2C8 /* Localizable.strings */; };
 		01C69EC218CF74EE0028DF28 /* MSMCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 01C69EC118CF74EE0028DF28 /* MSMCache.m */; };
 		01CB86EE24BAF49B005381A7 /* MSMSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CB86ED24BAF49B005381A7 /* MSMSearchController.swift */; };
+		01CB86F224BB04C0005381A7 /* CLPlacemarkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CB86F124BB04C0005381A7 /* CLPlacemarkExtension.swift */; };
 		01CD0C2C18DC1BD000DEC6C9 /* MSMValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CD0C2B18DC1BD000DEC6C9 /* MSMValueFormatter.m */; };
 		01CD0C3018DC1EE800DEC6C9 /* MSMMetricsFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CD0C2F18DC1EE800DEC6C9 /* MSMMetricsFormatter.m */; };
 		01CD9B2C18D898030049149C /* MSMLockBasin.m in Sources */ = {isa = PBXBuildFile; fileRef = 01CD9B2B18D898030049149C /* MSMLockBasin.m */; };
@@ -212,6 +213,7 @@
 		01C69EC018CF74EE0028DF28 /* MSMCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMCache.h; path = Model/MSMCache.h; sourceTree = "<group>"; };
 		01C69EC118CF74EE0028DF28 /* MSMCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMCache.m; path = Model/MSMCache.m; sourceTree = "<group>"; };
 		01CB86ED24BAF49B005381A7 /* MSMSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MSMSearchController.swift; path = ViewController/MSMSearchController.swift; sourceTree = "<group>"; };
+		01CB86F124BB04C0005381A7 /* CLPlacemarkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CLPlacemarkExtension.swift; path = mySeaMap/Model/CLPlacemarkExtension.swift; sourceTree = SOURCE_ROOT; };
 		01CD0C2A18DC1BD000DEC6C9 /* MSMValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMValueFormatter.h; path = Model/MapObjects/MSMValueFormatter.h; sourceTree = "<group>"; };
 		01CD0C2B18DC1BD000DEC6C9 /* MSMValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMValueFormatter.m; path = Model/MapObjects/MSMValueFormatter.m; sourceTree = "<group>"; };
 		01CD0C2E18DC1EE800DEC6C9 /* MSMMetricsFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMMetricsFormatter.h; path = Model/MapObjects/MSMMetricsFormatter.h; sourceTree = "<group>"; };
@@ -584,6 +586,7 @@
 			children = (
 				01E2BB2C18E2BAC000E6F8C3 /* MSMLocationManager.h */,
 				01E2BB2D18E2BAC000E6F8C3 /* MSMLocationManager.m */,
+				01CB86F124BB04C0005381A7 /* CLPlacemarkExtension.swift */,
 			);
 			name = Location;
 			path = Model/Tracking;
@@ -761,6 +764,7 @@
 				0174C7521D97A76C001EA410 /* MSMTrackDetailTableViewController.m in Sources */,
 				011272C31DE370D100E41E8F /* MSMScaleView.swift in Sources */,
 				01D0BE0618D216C6007ED53A /* MSMMapObject.m in Sources */,
+				01CB86F224BB04C0005381A7 /* CLPlacemarkExtension.swift in Sources */,
 				010E35E919222148008E6F56 /* MSMZoomSettingsViewController.m in Sources */,
 				01AD59031DEAF6D300F0CBB8 /* MSMViewControllerExtension.swift in Sources */,
 				01CD0C2C18DC1BD000DEC6C9 /* MSMValueFormatter.m in Sources */,
