@@ -65,13 +65,13 @@
 - (NSString *) formattedLatitude
 {
     NSString *latStr = self.latitude.sign < 0 ? @"S" : @"N";
-    return [NSString stringWithFormat:@"%02ld°%05.2f'%@", (long)self.latitude.degrees, self.latitude.minutes, latStr];
+    return [NSString stringWithFormat:@"%ld°%05.2f'%@", (long)self.latitude.degrees, self.latitude.minutes, latStr];
 }
 
 - (NSString *) formattedLongitude
 {
     NSString *lngStr = self.longitude.sign < 0 ? @"W" : @"E";
-    return [NSString stringWithFormat:@"%03ld°%05.2f'%@", (long)self.longitude.degrees, self.longitude.minutes, lngStr];
+    return [NSString stringWithFormat:@"%ld°%05.2f'%@", (long)self.longitude.degrees, self.longitude.minutes, lngStr];
 }
 
 - (NSString *) formattedCourse

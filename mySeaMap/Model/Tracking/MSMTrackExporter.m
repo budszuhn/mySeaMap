@@ -7,7 +7,6 @@
 //
 
 #import "MSMTrackExporter.h"
-#import "GRMustache.h"
 #import "TrackEntry.h"
 #import "MSMUtils.h"
 
@@ -44,18 +43,17 @@
 //    NSArray *sortedEntries = [self.track.trackEntries sortedArrayUsingDescriptors:@[sorting]];
     
     
-    // aus einem mir nicht bekannten Grund, kann Mustache nicht auf die selbst hinzugefügten Methoden der Managed Objects zugreifen
-    // wir packen daher alles in Dictionaries um. Dabei können wir die Daten gleich richtig formatieren, wie praktisch
-    NSMutableArray *renderData = [NSMutableArray arrayWithCapacity:[self.track.trackEntries count]];
+    // GPX-Datei direkt erzeugen (früher über GRMustache und GPX.mustache)
     NSDateFormatter *dateFormatter = [MSMUtils iso8601Formatter];
+    NSMutableString *rendering = [NSMutableString string];
+    [rendering appendString:@"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"];
+    [rendering appendString:@"<gpx creator=\"mySeaMap\" version=\"1.1\" xmlns=\"http://www.topografix.com/GPX/1/1\">\n<trk>\n<trkseg>\n"];
     for (TrackEntry *te in self.track.trackEntries) {
-        
-        [renderData addObject: @{@"latitude" : te.latitude, @"longitude" : te.longitude, @"timeStamp" : [dateFormatter stringFromDate: te.timeStamp]}];
+        [rendering appendFormat:@"<trkpt lat=\"%.7f\" lon=\"%.7f\"><time>%@</time></trkpt>\n",
+         te.latitude.doubleValue, te.longitude.doubleValue, te.timeStamp ? [dateFormatter stringFromDate: te.timeStamp] : @""];
     }
+    [rendering appendString:@"</trkseg>\n</trk>\n</gpx>\n"];
 
-    NSString *rendering = [GRMustacheTemplate renderObject:@{ @"trackEntries": renderData } fromResource: [self mustacheTemplate] bundle:nil error:NULL];
-
-    
     self.tempFile = [self tempFileUrl];
     
     // write content into temp file

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Frank Budszuhn. See LICENSE.
 //
 
-#import <TMCache/TMCache.h>
+#import "MSMDiskCache.h"
 #import "MSMUtils.h"
 #import "MSMCacheSettingsViewController.h"
 #import "MSMMapSource.h"
@@ -15,8 +15,8 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *deleteCacheButton;
 
-@property (strong, nonatomic) TMCache *seamarkCache;
-@property (strong, nonatomic) TMCache *overpassCache;
+@property (strong, nonatomic) MSMDiskCache *seamarkCache;
+@property (strong, nonatomic) MSMDiskCache *overpassCache;
 
 @property (strong, nonatomic) NSByteCountFormatter *byteCountFormatter;
 
@@ -42,8 +42,8 @@
     self.byteCountFormatter.countStyle = NSByteCountFormatterCountStyleFile;
     self.byteCountFormatter.allowsNonnumericFormatting = NO;
     
-    self.seamarkCache = [[TMCache alloc] initWithName: CACHE_SEAMARKS]; // TODO: ersetzen durch MapSource-Implementierung ###
-    self.overpassCache = [[TMCache alloc] initWithName: CACHE_OVERPASS];
+    self.seamarkCache = [[MSMDiskCache alloc] initWithName: CACHE_SEAMARKS]; // TODO: ersetzen durch MapSource-Implementierung ###
+    self.overpassCache = [[MSMDiskCache alloc] initWithName: CACHE_OVERPASS];
 }
 
 
@@ -57,20 +57,20 @@
         
         UITableViewCell *aCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         aCell.detailTextLabel.text = NSLocalizedString(@"DELETING", nil);
-        [cachableMapSource.cache removeAllObjects:^(TMCache *cache) {
+        [cachableMapSource.cache removeAllObjects:^(MSMDiskCache *cache) {
             aCell.detailTextLabel.text = [self.byteCountFormatter stringFromByteCount: cachableMapSource.cache.diskByteCount];
         }];
     }
     
     UITableViewCell *cell2 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:mapSourceCount inSection:0]];
     cell2.detailTextLabel.text = NSLocalizedString(@"DELETING", nil);
-    [self.seamarkCache removeAllObjects:^(TMCache *cache) {
+    [self.seamarkCache removeAllObjects:^(MSMDiskCache *cache) {
         cell2.detailTextLabel.text = [self.byteCountFormatter stringFromByteCount: self.seamarkCache.diskByteCount];
     }];
     
     UITableViewCell *cell3 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:mapSourceCount + 1 inSection:0]];
     cell3.detailTextLabel.text = NSLocalizedString(@"DELETING", nil);
-    [self.overpassCache removeAllObjects:^(TMCache *cache) {
+    [self.overpassCache removeAllObjects:^(MSMDiskCache *cache) {
         cell3.detailTextLabel.text = [self.byteCountFormatter stringFromByteCount: self.overpassCache.diskByteCount];
     }];
 }
@@ -111,7 +111,7 @@
             cell.textLabel.text = mapSource.name;
             
             // den Cache neu anlegen, damit der diskByteCount aktualisiert wird (passiert sonst nicht)
-            TMCache *aCache = [[TMCache alloc] initWithName: mapSource.key];
+            MSMDiskCache *aCache = [[MSMDiskCache alloc] initWithName: mapSource.key];
             cell.detailTextLabel.text = [self.byteCountFormatter stringFromByteCount: aCache.diskByteCount];
         }
         else if (indexPath.row == mapSourceCount)
@@ -189,8 +189,8 @@
             
             NSTimeInterval newDuration = [MSMUtils cacheDurationInSeconds];
             // FIXME: cache
-            self.seamarkCache.diskCache.ageLimit = newDuration;
-            self.overpassCache.diskCache.ageLimit = newDuration;
+            self.seamarkCache.ageLimit = newDuration;
+            self.overpassCache.ageLimit = newDuration;
         }
         else
         {

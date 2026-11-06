@@ -35,7 +35,7 @@
 
 - (NSString *) description
 {
-    return [NSString stringWithFormat:@"%d°%f'", _sign*_degrees, _minutes];
+    return [NSString stringWithFormat:@"%ld°%f'", (long)(_sign*_degrees), _minutes];
 }
 
 

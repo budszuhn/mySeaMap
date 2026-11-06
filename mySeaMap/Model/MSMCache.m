@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Frank Budszuhn. See LICENSE.
 //
 
-#import <TMCache/TMCache.h>
+#import "MSMDiskCache.h"
 #import "MSMCache.h"
 #import "MSMUtils.h"
 #import "MSMOverPassQuery.h"
@@ -17,7 +17,7 @@
 
 @interface MSMCache ()
 
-@property (strong, nonatomic) TMCache *cache;
+@property (strong, nonatomic) MSMDiskCache *cache;
 @property (strong, nonatomic) NSMutableDictionary *requestQueue; // fb, 25.3.14, wir schreiben die Anforderungen nicht mehr in den Cache, sondern extra hier hinein
 @property (strong, nonatomic) MSMOverPassQuery *overpassQuery;
 
@@ -39,8 +39,8 @@
     
     if (self)
     {
-        _cache = [[TMCache alloc] initWithName: CACHE_OVERPASS];
-        _cache.diskCache.ageLimit = [MSMUtils cacheDurationInSeconds]; 
+        _cache = [[MSMDiskCache alloc] initWithName: CACHE_OVERPASS];
+        _cache.ageLimit = [MSMUtils cacheDurationInSeconds]; 
         _overpassQuery = [[MSMOverPassQuery alloc] init];
         _requestQueue = [NSMutableDictionary dictionary];
     }

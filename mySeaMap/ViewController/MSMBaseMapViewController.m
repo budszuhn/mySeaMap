@@ -36,7 +36,7 @@
 {
     [super viewDidLoad];
 
-    self.mapView.showsPointsOfInterest = NO;
+    self.mapView.pointOfInterestFilter = [MKPointOfInterestFilter filterExcludingAllCategories];
     self.mapView.showsBuildings = NO;
     
     MSMMapSource *mapSource = [MSMMapSource mapSourceFromUserDefaults];

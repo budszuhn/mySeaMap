@@ -42,7 +42,7 @@
         // Idee: wir schicken eine kleinen Test-Request an alle Server und messen die Antwort-Geschwindigkeit. Wer zuerst antwortet, gewinnt
         // wie könnte der Request aussehen?
         
-       _server = [[serverList objectAtIndex: arc4random_uniform([serverList count])] valueForKey:@"url"];
+       _server = [[serverList objectAtIndex: arc4random_uniform((uint32_t)[serverList count])] valueForKey:@"url"];
         NSLog(@"using overpass server = %@", _server);
     }
     return self;

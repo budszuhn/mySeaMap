@@ -5,7 +5,6 @@
 //  Created by Frank Budszuhn on 08.02.14.
 //
 
-#import <AFNetworking/AFNetworking.h>
 #import "FOQueryManager.h"
 #import "FONode.h"
 #import "FOWay.h"
@@ -39,17 +38,42 @@
     NSString *bboxStr = [self boundingBoxString:boundingBox language:_queryLanguage];
     queryString = [queryString stringByReplacingOccurrencesOfString:@"{{bbox}}" withString:bboxStr];
 
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
-    [manager GET:_serverUrl parameters:@{@"data": queryString} success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        [self processResult:responseObject success:success];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        // failure block may be nil
-        if (failure)
-            failure(error);
+    NSMutableCharacterSet *allowed = [NSMutableCharacterSet alphanumericCharacterSet];
+    [allowed addCharactersInString:@"-._~"];
+    NSString *encodedQuery = [queryString stringByAddingPercentEncodingWithAllowedCharacters: allowed];
+    NSString *separator = [_serverUrl containsString:@"?"] ? @"&" : @"?";
+    NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"%@%@data=%@", _serverUrl, separator, encodedQuery]];
+
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL: url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+
+        NSInteger statusCode = [response isKindOfClass: [NSHTTPURLResponse class]] ? [(NSHTTPURLResponse *)response statusCode] : 0;
+        id responseObject = nil;
+
+        if (error == nil && statusCode == 200 && data != nil)
+        {
+            NSError *jsonError = nil;
+            responseObject = [NSJSONSerialization JSONObjectWithData: data options: 0 error: &jsonError];
+            error = jsonError;
+        }
+        else if (error == nil)
+        {
+            error = [NSError errorWithDomain: NSURLErrorDomain code: NSURLErrorBadServerResponse
+                                    userInfo: @{NSLocalizedDescriptionKey: [NSString stringWithFormat:@"HTTP status %ld", (long)statusCode]}];
+        }
+
+        // wie früher bei AFNetworking: Rückmeldung auf dem Main-Thread
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if ([responseObject isKindOfClass: [NSDictionary class]])
+            {
+                [self processResult: responseObject success: success];
+            }
+            else if (failure) // failure block may be nil
+            {
+                failure(error);
+            }
+        });
     }];
+    [task resume];
 }
 
 
@@ -93,7 +117,7 @@
         }
         else
         {
-            [NSException raise:@"UnknownElementType" format: @"Unknown element type: %@", type];
+            NSLog(@"Unknown element type: %@", type); // früher: Exception -> Absturz
         }
     }
     
@@ -104,7 +128,9 @@
         NSMutableArray *resolvedNodes = [NSMutableArray arrayWithCapacity: [way.nodes count]];
         for (NSNumber *osmId in way.nodes)
         {
-            [resolvedNodes addObject: [nodeDictionary valueForKey: [osmId stringValue]]];
+            id <OSMNode> resolvedNode = [nodeDictionary valueForKey: [osmId stringValue]];
+            if (resolvedNode) // fehlende Knoten würden sonst zum Absturz führen
+                [resolvedNodes addObject: resolvedNode];
         }
 
         [finalWayArray addObject: [self wayForWay: way andNodes: resolvedNodes]];

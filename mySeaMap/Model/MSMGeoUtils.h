@@ -11,6 +11,10 @@
 @interface MSMGeoUtils : NSObject
 
 + (double) scaleWidthForMapWidth: (double) mapWidth inOrientation: (UIInterfaceOrientation) orientation;
+
+/// Länge der Maßstabsleiste passend zur tatsächlichen Kartengröße
+/// (für iPhone Duo: Außen- und Innenbildschirm haben unterschiedliche Größen)
++ (double) scaleWidthForMapWidth: (double) mapWidth viewSize: (CGSize) viewSize largeLayout: (BOOL) largeLayout;
 + (float) getHeadingForDirectionFromCoordinate:(CLLocationCoordinate2D)fromLoc toCoordinate:(CLLocationCoordinate2D)toLoc; // FIXME: methodenname, float
 
 + (CLLocationDistance) distanceFrom: (CLLocationCoordinate2D) fromLocation to: (CLLocationCoordinate2D) toLocation;

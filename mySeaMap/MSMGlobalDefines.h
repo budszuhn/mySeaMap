@@ -9,7 +9,7 @@
 #define MSM_DEVELOPER   0 // fb, 30.9.15, das Dev-Menü muss weg
 #define MSM_DEMO_MODE   0 // fixe Position und Geschwindigkeit simulieren, um Screenshots mit dem Simulator für den AppStore machen zu können 
 
-// TMCache names
+// MSMDiskCache names
 #define CACHE_OVERPASS                      @"Overpass"
 #define CACHE_SEAMARKS                      @"Seamarks"
 

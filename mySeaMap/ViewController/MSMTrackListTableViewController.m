@@ -75,7 +75,7 @@
         cell.imageView.image = [UIImage imageNamed:@"path_grey"];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%u Einträge", [track.trackEntries count]];
+    cell.textLabel.text = [NSString stringWithFormat:@"%lu Einträge", (unsigned long)[track.trackEntries count]];
     NSString *startDate = [MSMUtils userFriendlyDate: track.startDate];
     NSTimeInterval duration = [endDate timeIntervalSinceDate:track.startDate];
     

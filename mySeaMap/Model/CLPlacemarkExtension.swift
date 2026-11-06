@@ -6,6 +6,8 @@
 //  Copyright © 2020 Frank Budszuhn. All rights reserved.
 //
 
+import CoreLocation
+
 extension CLPlacemark {
     
     func formattedPlacemark() -> String {

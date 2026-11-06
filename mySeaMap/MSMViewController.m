@@ -8,9 +8,7 @@
 
 @import SafariServices;
 
-#import <MBProgressHUD/MBProgressHUD.h>
-#import <MKMapViewZoom/MKMapView+ZoomLevel.h>
-#import <LSMessageHUD/LSMessageHUD.h>
+#import "MKMapView+MSMZoomLevel.h"
 #import "MSMViewController.h"
 #import "MSMSettingsViewController.h"
 #import "MSMZoomSettingsViewController.h"
@@ -143,22 +141,33 @@
                                                  name: NOTIFICATION_MAP_SOURCE_CHANGED
                                                object: nil];
     
-    [self showNavigationWarningAlert];
+    // auf Größenänderungen (Drehen, Split View) reagieren
+    [self registerForTraitChanges: @[UITraitHorizontalSizeClass.class, UITraitVerticalSizeClass.class]
+                       withAction: @selector(traitsDidChange)];
 }
 
 
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+
+    // Hinweis "nicht zur Navigation" erst zeigen, wenn die View im Fenster ist.
+    // (Aus viewDidLoad heraus blieb auf aktuellem iOS nur der graue Schleier ohne Dialog stehen.)
+    static BOOL warningShown = NO;
+    if (! warningShown && self.presentedViewController == nil)
+    {
+        warningShown = YES;
+        [self showNavigationWarningAlert];
+    }
     
     [self displayLocation: [[MSMLocationManager manager] currentLocation]];
 }
 
 
 // MARK: - Trait Collection
-- (void) traitCollectionDidChange: (UITraitCollection *) previousTraitCollection
+// seit iOS 17: Registrierung über registerForTraitChanges (siehe viewDidLoad)
+- (void) traitsDidChange
 {
-    [super traitCollectionDidChange: previousTraitCollection];
     
     // falls wir beim Start eine Url bekommen haben
     // wenn wir es nicht hier machen, dann verrutscht die Position leicht durch die Änderung der Trait Collection
@@ -176,6 +185,36 @@
         FBGeoLocation *currentLocation = [[MSMLocationManager manager] currentLocation];
         [self.mapView setCenterCoordinate: currentLocation.coordinate];
     }
+
+    // Maßstab, Fadenkreuz und Position an die neue Größe anpassen (z. B. iPhone Duo auf-/zugeklappt)
+    [self refreshForNewMapSize];
+}
+
+
+// MARK: - Größenänderung (Drehen, iPhone Duo auf-/zuklappen, Split View)
+
+- (void) viewWillTransitionToSize: (CGSize) size withTransitionCoordinator: (id<UIViewControllerTransitionCoordinator>) coordinator
+{
+    [super viewWillTransitionToSize: size withTransitionCoordinator: coordinator];
+
+    // Kartenmitte merken, damit sie beim Wechsel zwischen Außen- und Innenbildschirm
+    // genau unter dem Fadenkreuz bleibt (die Zoomstufe bleibt erhalten, man sieht nur mehr Umgebung)
+    CLLocationCoordinate2D center = [self mapCenterCoordinate];
+    BOOL followsPosition = self.mapTrackingType == MSMMapTrackingTypeOn || self.mapTrackingType == MSMMapTrackingTypeHeading;
+
+    [coordinator animateAlongsideTransition: nil completion: ^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        if (! followsPosition && CLLocationCoordinate2DIsValid(center))
+        {
+            [self.mapView setCenterCoordinate: center animated: NO];
+        }
+        [self refreshForNewMapSize];
+    }];
+}
+
+- (void) refreshForNewMapSize
+{
+    [self updateCrosshairPosition];
+    [self mapView: self.mapView regionDidChangeAnimated: NO]; // berechnet Maßstab und Positionsanzeige neu
 }
 
 
@@ -225,6 +264,7 @@
     
     // ToolBar
     self.mapInfoItem.title = nil;
+    self.mapInfoItem.hidden = YES; // sonst zeigt iOS 26 eine leere Glas-Kapsel
     
     UIColor *fontColor = self.view.tintColor;
     UIImage *crossHairImage = [StyleKit imageOfCrossHairWithImageSize:CGSizeMake(21, 21) crossHairStrokeColor:[UIColor blackColor] crossHairStrokeWidth:1];
@@ -236,21 +276,24 @@
     UIColor *darkFontColor = [ UIColor colorWithHue:hue saturation:saturation brightness:brightness -0.5 alpha:alpha ] ;
     
     [self.crossHairPositionButton setTitleColor: darkFontColor forState:UIControlStateHighlighted];
-    [[self.crossHairPositionButton titleLabel] setFont:[UIFont monospacedDigitSystemFontOfSize:16 weight:UIFontWeightRegular]];
+    [[self.crossHairPositionButton titleLabel] setFont:[UIFont monospacedDigitSystemFontOfSize:12.8 weight:UIFontWeightRegular]];
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     self.crossHairPositionButton.titleEdgeInsets = UIEdgeInsetsMake(0.0f, 3.0f, 0.0f, 0.0f);
+#pragma clang diagnostic pop
 }
 
 - (void) setupLabels
 {
     // proportionalen Font für die Instrumente setzen
-    [self.latitudeLabel setFont:[UIFont monospacedDigitSystemFontOfSize:24 weight:UIFontWeightSemibold]];
-    [self.longitudeLabel setFont:[UIFont monospacedDigitSystemFontOfSize:24 weight:UIFontWeightSemibold]];
-    [self.speedLabel setFont:[UIFont monospacedDigitSystemFontOfSize:24 weight:UIFontWeightSemibold]];
-    [self.courseLabel setFont:[UIFont monospacedDigitSystemFontOfSize:24 weight:UIFontWeightSemibold]];
+    [self.latitudeLabel setFont:[UIFont monospacedDigitSystemFontOfSize:19.2 weight:UIFontWeightSemibold]];
+    [self.longitudeLabel setFont:[UIFont monospacedDigitSystemFontOfSize:19.2 weight:UIFontWeightSemibold]];
+    [self.speedLabel setFont:[UIFont monospacedDigitSystemFontOfSize:19.2 weight:UIFontWeightSemibold]];
+    [self.courseLabel setFont:[UIFont monospacedDigitSystemFontOfSize:19.2 weight:UIFontWeightSemibold]];
     
-    [self.bigSpeedLabel setFont:[UIFont monospacedDigitSystemFontOfSize:37 weight:UIFontWeightSemibold]];
-    [self.bigCourseLabel setFont:[UIFont monospacedDigitSystemFontOfSize:37 weight:UIFontWeightSemibold]];
+    [self.bigSpeedLabel setFont:[UIFont monospacedDigitSystemFontOfSize:29.6 weight:UIFontWeightSemibold]];
+    [self.bigCourseLabel setFont:[UIFont monospacedDigitSystemFontOfSize:29.6 weight:UIFontWeightSemibold]];
 }
 
 // verhindert, dass sich mehrere Recognizer in die Quere kommen
@@ -333,9 +376,9 @@
     self.undoFullscreenView.hidden = NO;
     self.mapControlsView.isDrawCrosshairs = NO; // kein Fadenkreuz im Fullscreen
     
-    //  move legal text
-    UILabel *attributionLabel = [self.mapView.subviews objectAtIndex:1];
-    attributionLabel.center = CGPointMake(attributionLabel.center.x + 45.0, attributionLabel.center.y);
+    // früher wurde hier der "Rechtliches"-Hinweis von MapKit verschoben (subviews[1]).
+    // Auf aktuellen iOS-Versionen ist das kein UILabel mehr - das Verschieben entfällt,
+    // da die Instrumente ohnehin innerhalb der Safe Area liegen.
 }
 
 - (IBAction)undoFullScreen:(id)sender
@@ -386,7 +429,48 @@
     UIPasteboard *appPasteBoard = [UIPasteboard generalPasteboard];
     [appPasteBoard setString: [geoLocation pasteboardRepresentation]];
     
-    [LSMessageHUD showWithMessage: NSLocalizedString(@"COPY_MESSAGE", nil)];
+    [self showToastWithMessage: NSLocalizedString(@"COPY_MESSAGE", nil)];
+}
+
+// kurze Einblendung (früher LSMessageHUD)
+- (void) showToastWithMessage: (NSString *) message
+{
+    UILabel *label = [[UILabel alloc] init];
+    label.text = message;
+    label.textColor = [UIColor whiteColor];
+    label.font = [UIFont systemFontOfSize:17 weight:UIFontWeightSemibold];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.numberOfLines = 0;
+
+    UIView *toast = [[UIView alloc] init];
+    toast.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.75];
+    toast.layer.cornerRadius = 14.0;
+    toast.userInteractionEnabled = NO;
+    toast.alpha = 0.0;
+    toast.translatesAutoresizingMaskIntoConstraints = NO;
+    label.translatesAutoresizingMaskIntoConstraints = NO;
+    [toast addSubview: label];
+    [self.view addSubview: toast];
+
+    [NSLayoutConstraint activateConstraints:@[
+        [label.leadingAnchor constraintEqualToAnchor:toast.leadingAnchor constant:20],
+        [label.trailingAnchor constraintEqualToAnchor:toast.trailingAnchor constant:-20],
+        [label.topAnchor constraintEqualToAnchor:toast.topAnchor constant:14],
+        [label.bottomAnchor constraintEqualToAnchor:toast.bottomAnchor constant:-14],
+        [toast.centerXAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.centerXAnchor],
+        [toast.centerYAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.centerYAnchor],
+        [toast.widthAnchor constraintLessThanOrEqualToAnchor:self.view.safeAreaLayoutGuide.widthAnchor constant:-40]
+    ]];
+
+    [UIView animateWithDuration:0.2 animations:^{
+        toast.alpha = 1.0;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.4 delay:1.2 options:0 animations:^{
+            toast.alpha = 0.0;
+        } completion:^(BOOL done) {
+            [toast removeFromSuperview];
+        }];
+    }];
 }
 
 
@@ -462,7 +546,7 @@
         
         if (isMetric) {
             
-            double scaleKM = [MSMGeoUtils scaleWidthForMapWidth: dist/1000.0 inOrientation: self.interfaceOrientation];
+            double scaleKM = [MSMGeoUtils scaleWidthForMapWidth: dist/1000.0 viewSize: self.mapView.bounds.size largeLayout: [MSMUtils isLargeLayoutForTraitCollection: self.traitCollection]];
             text = scaleKM >= 1.0 ? [NSString stringWithFormat:@"%.0f km", scaleKM] : [NSString stringWithFormat:@"%.2f km", scaleKM];
             
             meters = scaleKM * 1000.0;
@@ -470,7 +554,7 @@
         else {
             double nauticalMiles = dist / NAUTICAL_MILE;
             
-            double scaleMiles = [MSMGeoUtils scaleWidthForMapWidth: nauticalMiles inOrientation: self.interfaceOrientation];
+            double scaleMiles = [MSMGeoUtils scaleWidthForMapWidth: nauticalMiles viewSize: self.mapView.bounds.size largeLayout: [MSMUtils isLargeLayoutForTraitCollection: self.traitCollection]];
             text = scaleMiles >= 1.0 ? [NSString stringWithFormat:@"%.0f NM", scaleMiles] : [NSString stringWithFormat:@"%.2f NM", scaleMiles];
             
             meters = scaleMiles * NAUTICAL_MILE;
@@ -491,6 +575,7 @@
     }
     
     
+    [self updateCrosshairPosition];
     [self updatePositionItem];
     [self updateShipPosition];
     
@@ -543,6 +628,11 @@
     geoLocation.coordinate = [self mapCenterCoordinate];
     
     [self.crossHairPositionButton setTitle:[geoLocation nauticalDescription] forState:UIControlStateNormal];
+    // Breite an den Text anpassen, damit die Position nicht mit "..." abgeschnitten wird
+    [self.crossHairPositionButton sizeToFit];
+    CGRect f = self.crossHairPositionButton.frame;
+    f.size.width += 8.0;
+    self.crossHairPositionButton.frame = f;
 }
 
 
@@ -558,10 +648,12 @@
         }
 
         self.mapInfoItem.title = self.currentActiveMapObject.title;
+        self.mapInfoItem.hidden = NO;
     }
     else
     {
         self.mapInfoItem.title = nil;
+        self.mapInfoItem.hidden = YES;
         
         [self showCrosshairsInToolbar: YES];
     }
@@ -583,14 +675,60 @@
 }
 
 
-// Position der Kartenmitte. Bugfix, 16.12.16 - man darf dafür *NICHT* mapView.centerCoordinate nehmen, die ist ungenau!!!
+// Ausrichtung ohne das veraltete self.interfaceOrientation
+- (UIInterfaceOrientation) currentInterfaceOrientation
+{
+    UIInterfaceOrientation orientation = self.view.window.windowScene.effectiveGeometry.interfaceOrientation;
+    if (orientation == UIInterfaceOrientationUnknown)
+    {
+        CGSize size = self.view.bounds.size;
+        orientation = size.width > size.height ? UIInterfaceOrientationLandscapeLeft : UIInterfaceOrientationPortrait;
+    }
+    return orientation;
+}
+
+/*
+ * Punkt (in Koordinaten der MapView), auf den MKMapView bei setCenterCoordinate: zentriert.
+ * Früher wurde hier mit festen Statusleisten-Höhen (20 pt) gerechnet. Auf iPhones mit Notch bzw.
+ * Dynamic Island ist die Statusleiste aber 44 - 62 pt hoch, dadurch lagen Fadenkreuz und angezeigte
+ * Position auseinander. Jetzt fragen wir MapKit direkt: wo liegt die aktuelle Kartenmitte?
+ */
+- (CGPoint) mapCenterPoint
+{
+    CGPoint p = [self.mapView convertCoordinate: self.mapView.centerCoordinate toPointToView: self.mapView];
+    if (isnan(p.x) || isnan(p.y) || isinf(p.x) || isinf(p.y))
+    {
+        p = CGPointMake(CGRectGetMidX(self.mapView.bounds), CGRectGetMidY(self.mapView.bounds));
+    }
+    return p;
+}
+
+// Position der Kartenmitte (unter dem Fadenkreuz)
 - (CLLocationCoordinate2D) mapCenterCoordinate
 {
-    CGPoint p = CGPointMake(self.mapView.bounds.size.width/2.0, self.mapView.bounds.size.height/2.0);
-    
-    p.y += [MSMUtils statusBarOffsetForRead: YES]; // WICHTIG: gleicht das verschobene Kreuz im Controlview aus.
-    
-    return [self.mapView convertPoint:p toCoordinateFromView:nil];
+    return [self.mapView convertPoint: [self mapCenterPoint] toCoordinateFromView: self.mapView];
+}
+
+// Fadenkreuz genau auf die Kartenmitte setzen
+- (void) updateCrosshairPosition
+{
+    if (self.mapControlsView == nil || self.mapView == nil)
+        return;
+
+    CGPoint p = [self.mapView convertPoint: [self mapCenterPoint] toView: self.mapControlsView];
+    self.mapControlsView.crosshairCenter = [NSValue valueWithCGPoint: p];
+}
+
+- (void) viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    [self updateCrosshairPosition];
+}
+
+- (void) viewSafeAreaInsetsDidChange
+{
+    [super viewSafeAreaInsetsDidChange];
+    [self updateCrosshairPosition];
 }
 
 
@@ -622,7 +760,7 @@
         MSMSearchController *searchVC = segue.destinationViewController;
         searchVC.delegate = self;
     }
-    else if ([segue.identifier isEqualToString:SEGUE_ABOUT] && [MSMUtils isIPad]) {
+    else if ([segue.identifier isEqualToString:SEGUE_ABOUT] && segue.destinationViewController.popoverPresentationController) {
         UINavigationController *navCtr = segue.destinationViewController;
         MSMAboutViewController *aboutVC = (MSMAboutViewController *) navCtr.topViewController;
         segue.destinationViewController.popoverPresentationController.delegate = aboutVC;
@@ -758,7 +896,7 @@
     safari.delegate = self;
     
     // dieses Gegurke machen wir, weil wir sonst aus einem PopOver nicht presentieren können
-    UIViewController *presentingViewController = [[[UIApplication sharedApplication] delegate] window].rootViewController;
+    UIViewController *presentingViewController = self.view.window.rootViewController;
     while(presentingViewController.presentedViewController != nil)
     {
         presentingViewController = presentingViewController.presentedViewController;

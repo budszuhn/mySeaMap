@@ -9,8 +9,8 @@
 #import "MSMMapSource.h"
 
 
-#define TILE_SERVER_MAPNIK                  @"http://a.tile.openstreetmap.org/{z}/{x}/{y}.png"
-#define TILE_SERVER_SEAMARKS                @"http://t1.openseamap.org/seamark/{z}/{x}/{y}.png"
+#define TILE_SERVER_MAPNIK                  @"https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+#define TILE_SERVER_SEAMARKS                @"https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png"
 
 
 @implementation MSMMapSource
@@ -208,11 +208,11 @@
 }
 
 
-- (TMCache *) cache
+- (MSMDiskCache *) cache
 {
     if (! _cache)
     {
-        _cache = [[TMCache alloc] initWithName: self.key];
+        _cache = [[MSMDiskCache alloc] initWithName: self.key];
     }
     
     return _cache;

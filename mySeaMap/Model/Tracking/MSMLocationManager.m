@@ -49,11 +49,13 @@
 - (void) startLocationManager
 {
     if (CLLocationManager.locationServicesEnabled) {
-        CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
-        
-        if (status != kCLAuthorizationStatusDenied && status != kCLAuthorizationStatusRestricted) {
+        if (self.locationManager == nil) {
             self.locationManager = [[CLLocationManager alloc] init];
             self.locationManager.delegate = self;
+        }
+        CLAuthorizationStatus status = self.locationManager.authorizationStatus;
+        
+        if (status != kCLAuthorizationStatusDenied && status != kCLAuthorizationStatusRestricted) {
             self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
             self.locationManager.activityType = CLActivityTypeOtherNavigation; // Apple nennt hier ausdrücklich 'boats' !!!
             self.locationManager.allowsBackgroundLocationUpdates = NO; // wird erst mit dem Tracking eingeschaltet

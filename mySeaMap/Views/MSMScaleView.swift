@@ -14,7 +14,7 @@ class MSMScaleView: UIView
         static let ScaleHeight = 3.0
     }
     
-    var scaleDrawWidth = 10.0 // wird von außen gesetzt
+    @objc var scaleDrawWidth = 10.0 // wird von außen gesetzt (auch aus Objective-C)
 
     
     override func draw(_ rect: CGRect)
@@ -22,8 +22,8 @@ class MSMScaleView: UIView
         let context = UIGraphicsGetCurrentContext()
         
         let width = self.scaleDrawWidth / 5.0
-        let frameHeight = Double(self.frame.height.native)
-        let frameWidth = Double(self.frame.width.native)
+        let frameHeight = Double(self.frame.height)
+        let frameWidth = Double(self.frame.width)
         let y = frameHeight - 10.0
         let x = frameWidth - self.scaleDrawWidth
         self.drawScale(context: context, width: width, x: x, y: y)

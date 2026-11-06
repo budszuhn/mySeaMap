@@ -53,8 +53,11 @@
 - (void) drawCrosshairs
 {
     CGSize crossHairSize = CGSizeMake(44, 44);
-    CGFloat centerX = self.bounds.size.width / 2.0;
-    CGFloat centerY = self.bounds.size.height / 2.0 + [MSMUtils statusBarOffsetForRead: NO]; // Schade, aber wir brauchen diesen Offset hier. Sonst funktioniert das Centering auf die eigene Position nicht
+    // Mittelpunkt wird vom MSMViewController aus der tatsächlichen Kartenmitte berechnet
+    // (früher: feste Statusleisten-Korrektur, die auf iPhones mit Notch / Dynamic Island nicht stimmte)
+    CGPoint center = self.crosshairCenter ? [self.crosshairCenter CGPointValue] : CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
+    CGFloat centerX = center.x;
+    CGFloat centerY = center.y;
     
     CGRect calculatedCrossHairRect = CGRectMake(centerX-(crossHairSize.width/2),
                                                 centerY-(crossHairSize.width/2),
@@ -67,6 +70,15 @@
 
 -(void)setIsDrawCrosshairs:(BOOL)value {
     _isDrawCrosshairs = value;
+    [self setNeedsDisplay];
+}
+
+
+-(void)setCrosshairCenter:(NSValue *)value {
+    // isEqualToValue: darf nicht mit nil aufgerufen werden (Absturz beim ersten Aufruf)
+    if (value == _crosshairCenter || (value != nil && _crosshairCenter != nil && [value isEqualToValue: _crosshairCenter]))
+        return;
+    _crosshairCenter = value;
     [self setNeedsDisplay];
 }
 
