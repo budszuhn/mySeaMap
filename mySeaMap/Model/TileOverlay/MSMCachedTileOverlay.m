@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Frank Budszuhn. See LICENSE.
 //
 
-#import <TMCache/TMCache.h>
+#import "MSMDiskCache.h"
 #import "MSMUtils.h"
 #import "MSMCachedTileOverlay.h"
 
 @interface MSMCachedTileOverlay ()
 
-@property (strong, nonatomic) TMCache *cache;
+@property (strong, nonatomic) MSMDiskCache *cache;
 
 @end
 
@@ -23,7 +23,7 @@
     self = [super initWithURLTemplate:URLTemplate];
     if (self)
     {        
-        _cache = [[TMCache alloc] initWithName: cacheName];
+        _cache = [[MSMDiskCache alloc] initWithName: cacheName];
         // das Trimmen des Caches kann recht lange dauern und blockiert den aktuellen Thread
         [self performSelectorInBackground:@selector(setCacheAgeLimit) withObject:nil];
     }
@@ -48,30 +48,28 @@
 
 - (void) setCacheAgeLimit
 {
-    self.cache.diskCache.ageLimit = [MSMUtils cacheDurationInSeconds];
+    self.cache.ageLimit = [MSMUtils cacheDurationInSeconds];
 }
 
 - (void) loadFileForPath: (MKTileOverlayPath) path result:(void (^)(NSData *, NSError *))result
 {
-    // fb, 26.3.2014, lokale Variable für request entfernt (Pointer auf Stack). Mal sehen ob das hilft, den Msg-Send Bug zu fixen!
-    // fb, 28.3.2014, nope, Fehler ist immer noch da. Fehler hat irgendetwas mit Tiles zu tun, NSData???
     WEAK_SELF(weakSelf);
-    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[self URLForTilePath:path]]
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-                               /*
-                               if (error)
-                               {
-                                   NSLog(@"#### error --- %@", error);
-                               }*/
-                               
-                               if ([(NSHTTPURLResponse*)response statusCode] == 200)
-                               {
-                                   [weakSelf.cache setObject:data forKey:[weakSelf keyStringForPath:path]];
-                               }
-                               
-                               result(data, error);
-                           }];
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL: [self URLForTilePath:path]
+                                                             completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSInteger statusCode = [response isKindOfClass: [NSHTTPURLResponse class]] ? [(NSHTTPURLResponse *)response statusCode] : 0;
+
+        if (statusCode == 200 && data != nil)
+        {
+            [weakSelf.cache setObject:data forKey:[weakSelf keyStringForPath:path]];
+            result(data, nil);
+        }
+        else
+        {
+            // leere Kachel statt Fehlerbild, MapKit zeigt dann einfach nichts an
+            result(nil, error ?: [NSError errorWithDomain: NSURLErrorDomain code: NSURLErrorBadServerResponse userInfo: nil]);
+        }
+    }];
+    [task resume];
 }
 
 - (NSString *) keyStringForPath: (MKTileOverlayPath) path

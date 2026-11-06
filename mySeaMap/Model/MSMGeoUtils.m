@@ -29,6 +29,20 @@
     return [self userFriendlyValue: result];
 }
 
++ (double) scaleWidthForMapWidth: (double) mapWidth viewSize: (CGSize) viewSize largeLayout: (BOOL) largeLayout
+{
+    double divisor;
+
+    if (largeLayout)
+        divisor = viewSize.width >= 700.0 ? 6.0 : 4.0; // iPad bzw. Innenbildschirm iPhone Duo
+    else if (viewSize.width > viewSize.height)
+        divisor = 3.0; // Querformat
+    else
+        divisor = 2.0; // Hochformat - sonst passt die Schrift nicht
+
+    return [self userFriendlyValue: mapWidth / divisor];
+}
+
 // Skala soll in ein 1/2/5-Schema gepresst werden
 + (double) userFriendlyValue: (double) value
 {

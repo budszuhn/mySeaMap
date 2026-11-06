@@ -21,7 +21,10 @@
 {
     if ([MSMFeatureManager hasFeature: MSMFeatureExternalDisplay])
     {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         NSArray *screens = [UIScreen screens];
+#pragma clang diagnostic pop
         
         NSLog(@"screens = %@", screens);
         
@@ -57,7 +60,10 @@
     UIWindow *window = [[UIWindow alloc] initWithFrame:[screen bounds]];
     self.window = window;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     window.screen = screen;
+#pragma clang diagnostic pop
     
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"ExternalScreen" bundle:nil];

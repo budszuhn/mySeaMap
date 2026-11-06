@@ -9,6 +9,7 @@
 #import "MSMTrackManager.h"
 #import "FBGeoLocation.h"
 #import "MSMLocationManager.h"
+#import "MSMCoreDataStack.h"
 
 
 @interface MSMTrackManager ()
@@ -48,19 +49,13 @@
 
 
 - (void)saveContext {
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
-        if (success) {
-            NSLog(@"You successfully saved your context.");
-        } else if (error) {
-            NSLog(@"Error saving context: %@", error.description);
-        }
-    }];
+    [MSMCoreDataStack save];
 }
 
 - (void) startTrack
 {
     // so, versuch mal einen Eintrag zu schreiben
-    self.currentTrack = [Track MR_createEntity];
+    self.currentTrack = [NSEntityDescription insertNewObjectForEntityForName:@"Track" inManagedObjectContext:[MSMCoreDataStack context]];
     self.currentTrack.startDate = [NSDate date];
     
     // für Location-Events anmelden
@@ -94,7 +89,10 @@
 
 - (NSArray<Track *> *) allTracks
 {
-    return [Track MR_findAllSortedBy:@"startDate" ascending:NO];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Track"];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:NO]];
+    NSArray *result = [[MSMCoreDataStack context] executeFetchRequest:request error:nil];
+    return result ?: @[];
 }
 
 - (BOOL) isVisibleOnMap: (Track *) track
@@ -141,7 +139,9 @@
 
 - (void) deleteTrack: (Track *) track;
 {
-    [track MR_deleteEntity];
+    [self.visibleTracks removeObject: track];
+    [self.polylineLookup removeObjectForKey: track.objectID];
+    [[MSMCoreDataStack context] deleteObject: track];
     [self saveContext];
 }
 
@@ -154,7 +154,7 @@
     NSDictionary *userInfo = [notification userInfo];
     FBGeoLocation *loc = [userInfo valueForKey:@"loc"];
     
-    TrackEntry *entry = [TrackEntry MR_createEntity];
+    TrackEntry *entry = [NSEntityDescription insertNewObjectForEntityForName:@"TrackEntry" inManagedObjectContext:[MSMCoreDataStack context]];
     
     entry.track = self.currentTrack;
     entry.latitude = [NSNumber numberWithDouble: loc.coordinate.latitude];
@@ -162,7 +162,8 @@
     entry.timeStamp = [NSDate date];
     
     // TODO: ggf. sollten wir die Codierung mit -1 einfach übernehmen?
-    if (loc.course > -1) { entry.heading =  [NSNumber numberWithDouble:loc.course]; }
+    // heading ist im Datenmodell eine Ganzzahl 0...359 - Kommawerte wie 359.6 würden das Speichern verhindern
+    if (loc.course > -1) { entry.heading = [NSNumber numberWithInt: ((int)lround(loc.course)) % 360]; }
     if (loc.speed > -1) { entry.speed = [NSNumber numberWithDouble:loc.speed]; }// Einheit???
     
     [self saveContext];

@@ -16,7 +16,7 @@
 - (BOOL)canDrawMapRect:(MKMapRect)mapRect zoomScale:(MKZoomScale)zoomScale
 {
     NSInteger zoomLevel = zoomScaleToZoomLevel(zoomScale);
-    NSLog(@"zoom level in renderer is %d", zoomLevel);
+    NSLog(@"zoom level in renderer is %ld", (long)zoomLevel);
     return zoomLevel < 12;
 }
 

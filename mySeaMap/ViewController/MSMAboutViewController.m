@@ -5,39 +5,63 @@
 //  Created by Frank Budszuhn on 06.11.13.
 //  Copyright (c) 2013 Frank Budszuhn. See LICENSE.
 //
+//  2026: UIWebView (von Apple entfernt) durch WKWebView ersetzt.
+//
+
+@import WebKit;
 
 #import "MSMAboutViewController.h"
 
-@interface MSMAboutViewController () <UIWebViewDelegate>
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@interface MSMAboutViewController () <WKNavigationDelegate>
+
+@property (strong, nonatomic) WKWebView *webView;
 
 @end
 
 @implementation MSMAboutViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-	NSString *filePath = [[NSBundle mainBundle] pathForResource: @"about" ofType:@"html"];
-	[self.webView loadRequest: [NSURLRequest requestWithURL: [NSURL fileURLWithPath: filePath]]];
+
+    WKWebView *webView = [[WKWebView alloc] initWithFrame: self.view.bounds configuration: [[WKWebViewConfiguration alloc] init]];
+    webView.navigationDelegate = self;
+    webView.translatesAutoresizingMaskIntoConstraints = NO;
+    webView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview: webView];
+
+    UILayoutGuide *guide = self.view.safeAreaLayoutGuide;
+    [NSLayoutConstraint activateConstraints: @[
+        [webView.leadingAnchor constraintEqualToAnchor: self.view.leadingAnchor],
+        [webView.trailingAnchor constraintEqualToAnchor: self.view.trailingAnchor],
+        [webView.topAnchor constraintEqualToAnchor: guide.topAnchor],
+        [webView.bottomAnchor constraintEqualToAnchor: self.view.bottomAnchor]
+    ]];
+    self.webView = webView;
+
+    NSURL *fileURL = [[NSBundle mainBundle] URLForResource: @"about" withExtension: @"html"];
+    if (fileURL)
+    {
+        [self.webView loadFileURL: fileURL allowingReadAccessToURL: [fileURL URLByDeletingLastPathComponent]];
+    }
 }
 
 
-#pragma mark - UIWebViewDelegate
+#pragma mark - WKNavigationDelegate
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+// Links aus der Info-Seite werden in Safari bzw. der zuständigen App geöffnet
+- (void) webView: (WKWebView *) webView decidePolicyForNavigationAction: (WKNavigationAction *) navigationAction decisionHandler: (void (^)(WKNavigationActionPolicy)) decisionHandler
 {
-	return ![[ UIApplication sharedApplication] openURL: [request URL]];
+    NSURL *url = navigationAction.request.URL;
+
+    if (navigationAction.navigationType == WKNavigationTypeLinkActivated && url && ! url.isFileURL)
+    {
+        [[UIApplication sharedApplication] openURL: url options: @{} completionHandler: nil];
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
+    }
+
+    decisionHandler(WKNavigationActionPolicyAllow);
 }
 
 #pragma mark - UIPopoverPresentationControllerDelegate

@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Frank Budszuhn. See LICENSE.
 //
 
-#import <AFNetworking.h>
 #import "MSMOverpassServer.h"
 #import "MSMOverPassQuery.h"
 #import "FBOSMNode.h"

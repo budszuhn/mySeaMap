@@ -10,10 +10,11 @@
 
 @interface MSMAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
-
 @property (nonatomic) CGFloat displayBrightness;
 @property (nonatomic) BOOL nightMode;
-@property (nonatomic) NSDictionary *externalLaunchParams; 
+@property (nonatomic) NSDictionary *externalLaunchParams;
+
+/// verarbeitet myseamap://-URLs (wird vom MSMSceneDelegate aufgerufen)
+- (BOOL) handleOpenURL: (NSURL *) url;
 
 @end

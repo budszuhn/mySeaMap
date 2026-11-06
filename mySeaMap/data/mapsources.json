@@ -2,6 +2,6 @@
     "apple-maps" : true,
     "myseamap-defaults" : true,
      "mapsources" : [
-           { "name" : "Stamen Toner", "type" : "background", "key" : "stamen", "url" : "http://b.tile.stamen.com/toner-lite/{z}/{x}/{y}.png"}
+           { "name" : "CARTO Light", "type" : "background", "key" : "carto-light", "url" : "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}
                      ]
  }

@@ -8,7 +8,7 @@
 //  TODO: die Zoomstufen sollten dann irgendwann auch mal hierein übernommen werden
 
 #import <Foundation/Foundation.h>
-#import "TMCache.h"
+#import "MSMDiskCache.h"
 
 @import MapKit;
 
@@ -28,7 +28,7 @@ typedef NS_ENUM(NSInteger, MSMMapSourceType) {
 @property (nonatomic, readonly) BOOL flipped;
 @property (nonatomic, readonly) MSMMapSourceType type;
 
-@property (nonatomic, strong, readonly) TMCache *cache;
+@property (nonatomic, strong, readonly) MSMDiskCache *cache;
 
 + (NSArray *) mapSources;
 + (NSArray *) cachableMapSources;

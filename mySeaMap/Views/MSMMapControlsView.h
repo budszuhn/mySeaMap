@@ -14,5 +14,8 @@
 
 @property (nonatomic) BOOL isDrawCrosshairs;
 
+/// Mittelpunkt des Fadenkreuzes (CGPoint) in eigenen Koordinaten; nil = Mitte der View
+@property (nonatomic, strong) NSValue *crosshairCenter;
+
 
 @end

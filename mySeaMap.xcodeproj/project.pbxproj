@@ -29,7 +29,6 @@
 		013929F11BBA8C95004697D3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013929F01BBA8C95004697D3 /* Launch Screen.storyboard */; };
 		013956EB182D26F700833CB4 /* FBGeoValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 013956EA182D26F700833CB4 /* FBGeoValue.m */; };
 		013956EE182D2FDD00833CB4 /* FBGeoLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 013956ED182D2FDD00833CB4 /* FBGeoLocation.m */; };
-		014418B31D9A924400DF32BF /* GPX.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 014418B21D9A924400DF32BF /* GPX.mustache */; };
 		014418B61D9A97FB00DF32BF /* MSMGPXExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 014418B51D9A97FB00DF32BF /* MSMGPXExporter.m */; };
 		015ED24E1D98E2A60033075B /* MSMTrackExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 015ED24D1D98E2A60033075B /* MSMTrackExporter.m */; };
 		0160A5AA193E0E6900FD1B5A /* MSMMapSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0160A5A9193E0E6900FD1B5A /* MSMMapSource.m */; };
@@ -87,7 +86,10 @@
 		01EF82BB18D5C08D00EEB8F1 /* MSMMapObjectDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EF82BA18D5C08D00EEB8F1 /* MSMMapObjectDetailTableViewController.m */; };
 		01EF863318E071BC002186DF /* MSMCacheSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EF863218E071BC002186DF /* MSMCacheSettingsViewController.m */; };
 		173D44071E13F98A00B52C2D /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173D44061E13F98A00B52C2D /* StyleKit.swift */; };
-		66D7459C815EF60CE79AF5CD /* libPods-myseamap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67C40198FE927A4E553596BA /* libPods-myseamap.a */; };
+		58214DA7A62780A2D492099B /* MSMDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 658140988B5DDB8C899B1AD8 /* MSMDiskCache.m */; };
+		62A7464992EC30CC45CD5DB8 /* MSMSceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C84287BCA6DA3963F0B0B1 /* MSMSceneDelegate.m */; };
+		DAD84EF0A25298C8E0CDFD41 /* MSMCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 21594321BE934790A964E5C9 /* MSMCoreDataStack.m */; };
+		F6E146768C70E7F34E04B0F2 /* MKMapView+MSMZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE64DC2B7677A35D32E2730 /* MKMapView+MSMZoomLevel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,7 +133,6 @@
 		013956EC182D2FDD00833CB4 /* FBGeoLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBGeoLocation.h; path = Model/FBGeoLocation.h; sourceTree = "<group>"; };
 		013956ED182D2FDD00833CB4 /* FBGeoLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBGeoLocation.m; path = Model/FBGeoLocation.m; sourceTree = "<group>"; };
 		013B005E192CD4D900665BB6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		014418B21D9A924400DF32BF /* GPX.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GPX.mustache; path = Model/Tracking/GPX.mustache; sourceTree = "<group>"; };
 		014418B41D9A97FB00DF32BF /* MSMGPXExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMGPXExporter.h; path = Model/Tracking/MSMGPXExporter.h; sourceTree = "<group>"; };
 		014418B51D9A97FB00DF32BF /* MSMGPXExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMGPXExporter.m; path = Model/Tracking/MSMGPXExporter.m; sourceTree = "<group>"; };
 		015ED24C1D98E2A60033075B /* MSMTrackExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMTrackExporter.h; path = Model/Tracking/MSMTrackExporter.h; sourceTree = "<group>"; };
@@ -228,7 +229,7 @@
 		01D0BE0818D21729007ED53A /* MSMHarbour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMHarbour.m; path = Model/MapObjects/MSMHarbour.m; sourceTree = "<group>"; };
 		01D0BE0A18D22998007ED53A /* MSMBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMBridge.h; path = Model/MapObjects/MSMBridge.h; sourceTree = "<group>"; };
 		01D0BE0B18D22998007ED53A /* MSMBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMBridge.m; path = Model/MapObjects/MSMBridge.m; sourceTree = "<group>"; };
-		01D6F70C24B5961D007D5CD3 /* myseamap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = myseamap.entitlements; path = myseamap/myseamap.entitlements; sourceTree = "<group>"; };
+		01D6F70C24B5961D007D5CD3 /* myseamap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = myseamap.entitlements; path = mySeaMap/myseamap.entitlements; sourceTree = "<group>"; };
 		01DDB58B1921C9C70056B90B /* MSMOverpassServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMOverpassServer.h; path = Model/MSMOverpassServer.h; sourceTree = "<group>"; };
 		01DDB58C1921C9C70056B90B /* MSMOverpassServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMOverpassServer.m; path = Model/MSMOverpassServer.m; sourceTree = "<group>"; };
 		01E2BB2C18E2BAC000E6F8C3 /* MSMLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMLocationManager.h; sourceTree = "<group>"; };
@@ -242,13 +243,15 @@
 		01EF863118E071BC002186DF /* MSMCacheSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSMCacheSettingsViewController.h; path = ViewController/MSMCacheSettingsViewController.h; sourceTree = "<group>"; };
 		01EF863218E071BC002186DF /* MSMCacheSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSMCacheSettingsViewController.m; path = ViewController/MSMCacheSettingsViewController.m; sourceTree = "<group>"; };
 		01F67F0D20944C0B009F9313 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
-		07B318A683EDBF518B98106F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		0D60947339AE79DB401550F3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		173D44061E13F98A00B52C2D /* StyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleKit.swift; sourceTree = "<group>"; };
-		1C7A54C9A1563C6E6065F17E /* Pods-myseamap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myseamap.release.xcconfig"; path = "Pods/Target Support Files/Pods-myseamap/Pods-myseamap.release.xcconfig"; sourceTree = "<group>"; };
-		579862F7CD39208D0B1EC7AE /* Pods-myseamap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myseamap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myseamap/Pods-myseamap.debug.xcconfig"; sourceTree = "<group>"; };
-		67C40198FE927A4E553596BA /* libPods-myseamap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-myseamap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8722594C270943E1B7BA4860 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		21594321BE934790A964E5C9 /* MSMCoreDataStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MSMCoreDataStack.m; path = mySeaMap/Div/MSMCoreDataStack.m; sourceTree = SOURCE_ROOT; };
+		2FE64DC2B7677A35D32E2730 /* MKMapView+MSMZoomLevel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MKMapView+MSMZoomLevel.m"; path = "mySeaMap/Div/MKMapView+MSMZoomLevel.m"; sourceTree = SOURCE_ROOT; };
+		5DA348CA81A4BE6E193596C8 /* MSMSceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MSMSceneDelegate.h; path = mySeaMap/MSMSceneDelegate.h; sourceTree = SOURCE_ROOT; };
+		658140988B5DDB8C899B1AD8 /* MSMDiskCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MSMDiskCache.m; path = mySeaMap/Div/MSMDiskCache.m; sourceTree = SOURCE_ROOT; };
+		A9F34F15A97A17717AF2DA82 /* MSMDiskCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MSMDiskCache.h; path = mySeaMap/Div/MSMDiskCache.h; sourceTree = SOURCE_ROOT; };
+		B0A0461C895126C5E143AE30 /* MSMCoreDataStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MSMCoreDataStack.h; path = mySeaMap/Div/MSMCoreDataStack.h; sourceTree = SOURCE_ROOT; };
+		D9C84287BCA6DA3963F0B0B1 /* MSMSceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MSMSceneDelegate.m; path = mySeaMap/MSMSceneDelegate.m; sourceTree = SOURCE_ROOT; };
+		F1F2414DBF1FAA95BFB70EAF /* MKMapView+MSMZoomLevel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MKMapView+MSMZoomLevel.h"; path = "mySeaMap/Div/MKMapView+MSMZoomLevel.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,7 +266,6 @@
 				0124F1611827D072002B0DC7 /* UIKit.framework in Frameworks */,
 				0124F1951827D135002B0DC7 /* MapKit.framework in Frameworks */,
 				0124F15D1827D072002B0DC7 /* Foundation.framework in Frameworks */,
-				66D7459C815EF60CE79AF5CD /* libPods-myseamap.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +295,6 @@
 				0124F1621827D072002B0DC7 /* mySeaMap */,
 				0124F15B1827D072002B0DC7 /* Frameworks */,
 				0124F15A1827D072002B0DC7 /* Products */,
-				B5648C8CDCE95A4EBE3F8E04 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -317,8 +318,6 @@
 				0124F15E1827D072002B0DC7 /* CoreGraphics.framework */,
 				0124F1601827D072002B0DC7 /* UIKit.framework */,
 				0124F17E1827D072002B0DC7 /* XCTest.framework */,
-				8722594C270943E1B7BA4860 /* libPods.a */,
-				67C40198FE927A4E553596BA /* libPods-myseamap.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -340,6 +339,14 @@
 				0124F1771827D072002B0DC7 /* Images.xcassets */,
 				0121BAF220943D4700F21903 /* Flyover */,
 				0124F1631827D072002B0DC7 /* Supporting Files */,
+				A9F34F15A97A17717AF2DA82 /* MSMDiskCache.h */,
+				658140988B5DDB8C899B1AD8 /* MSMDiskCache.m */,
+				B0A0461C895126C5E143AE30 /* MSMCoreDataStack.h */,
+				21594321BE934790A964E5C9 /* MSMCoreDataStack.m */,
+				F1F2414DBF1FAA95BFB70EAF /* MKMapView+MSMZoomLevel.h */,
+				2FE64DC2B7677A35D32E2730 /* MKMapView+MSMZoomLevel.m */,
+				5DA348CA81A4BE6E193596C8 /* MSMSceneDelegate.h */,
+				D9C84287BCA6DA3963F0B0B1 /* MSMSceneDelegate.m */,
 			);
 			path = mySeaMap;
 			sourceTree = "<group>";
@@ -445,7 +452,6 @@
 				017860901D92BCEC0078F2B6 /* MSMTrackManager.m */,
 				015ED24C1D98E2A60033075B /* MSMTrackExporter.h */,
 				015ED24D1D98E2A60033075B /* MSMTrackExporter.m */,
-				014418B21D9A924400DF32BF /* GPX.mustache */,
 				014418B41D9A97FB00DF32BF /* MSMGPXExporter.h */,
 				014418B51D9A97FB00DF32BF /* MSMGPXExporter.m */,
 			);
@@ -589,17 +595,6 @@
 			path = Model/Tracking;
 			sourceTree = "<group>";
 		};
-		B5648C8CDCE95A4EBE3F8E04 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0D60947339AE79DB401550F3 /* Pods.debug.xcconfig */,
-				07B318A683EDBF518B98106F /* Pods.release.xcconfig */,
-				579862F7CD39208D0B1EC7AE /* Pods-myseamap.debug.xcconfig */,
-				1C7A54C9A1563C6E6065F17E /* Pods-myseamap.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -607,12 +602,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0124F18E1827D072002B0DC7 /* Build configuration list for PBXNativeTarget "myseamap" */;
 			buildPhases = (
-				6FF42DC35674412085A3EB75 /* [CP] Check Pods Manifest.lock */,
 				0124F1551827D072002B0DC7 /* Sources */,
 				0124F1561827D072002B0DC7 /* Frameworks */,
 				0124F1571827D072002B0DC7 /* Resources */,
-				9AF253165D24497B91E8081A /* [CP] Copy Pods Resources */,
-				FAC65CE50DEFCDC5471C609B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -630,7 +622,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MSM;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 2600;
 				ORGANIZATIONNAME = "Frank Budszuhn";
 				TargetAttributes = {
 					0124F1581827D072002B0DC7 = {
@@ -681,63 +673,11 @@
 				011DB2251921547500AAEDC9 /* myseamap.json in Resources */,
 				0124F1671827D072002B0DC7 /* InfoPlist.strings in Resources */,
 				0160A5AC193E108500FD1B5A /* mapsources.json in Resources */,
-				014418B31D9A924400DF32BF /* GPX.mustache in Resources */,
 				013929F11BBA8C95004697D3 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		6FF42DC35674412085A3EB75 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-myseamap-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9AF253165D24497B91E8081A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myseamap/Pods-myseamap-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FAC65CE50DEFCDC5471C609B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myseamap/Pods-myseamap-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0124F1551827D072002B0DC7 /* Sources */ = {
@@ -807,6 +747,10 @@
 				016B1F8A18DD5C92004D58E6 /* MSMCachedTileOverlay.m in Sources */,
 				011EF42F18636431009B0520 /* FBGeoRegion.m in Sources */,
 				0178608C1D92BB660078F2B6 /* TrackEntry.m in Sources */,
+				58214DA7A62780A2D492099B /* MSMDiskCache.m in Sources */,
+				DAD84EF0A25298C8E0CDFD41 /* MSMCoreDataStack.m in Sources */,
+				F6E146768C70E7F34E04B0F2 /* MKMapView+MSMZoomLevel.m in Sources */,
+				62A7464992EC30CC45CD5DB8 /* MSMSceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -879,7 +823,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Frank Budszuhn (6BHPXBHYHS)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -898,7 +841,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -925,7 +868,6 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -937,7 +879,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -947,59 +889,55 @@
 		};
 		0124F18F1827D072002B0DC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 579862F7CD39208D0B1EC7AE /* Pods-myseamap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = myseamap/myseamap.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 8;
+				CODE_SIGN_ENTITLEMENTS = mySeaMap/myseamap.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = X7EV8WNP9F;
-				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mySeaMap/mySeaMap-Prefix.pch";
 				INFOPLIST_FILE = "mySeaMap/mySeaMap-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.2.2;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.budszuhn.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "mySeaMap/myseamap-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		0124F1901827D072002B0DC7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C7A54C9A1563C6E6065F17E /* Pods-myseamap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = myseamap/myseamap.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 8;
+				CODE_SIGN_ENTITLEMENTS = mySeaMap/myseamap.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = X7EV8WNP9F;
-				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mySeaMap/mySeaMap-Prefix.pch";
 				INFOPLIST_FILE = "mySeaMap/mySeaMap-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.2.2;
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.budszuhn.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "mySeaMap/myseamap-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

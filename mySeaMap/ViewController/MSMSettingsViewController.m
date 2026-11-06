@@ -341,18 +341,22 @@
 {
     MSMAppDelegate *appDelegate = (MSMAppDelegate *)[UIApplication sharedApplication].delegate;
     appDelegate.nightMode = nightMode;
-    
+
+    UIScreen *screen = self.view.window.windowScene.screen;
+    if (screen == nil)
+        return;
+
     if (nightMode)
     {
         // originale Helligkeit sichern, falls der User den Nachtmodus wieder abschaltet
-        appDelegate.displayBrightness = [UIScreen mainScreen].brightness;
-        [UIScreen mainScreen].wantsSoftwareDimming = YES; // damit bekommt man es noch dunkler
-        [UIScreen mainScreen].brightness = 0.01; // es geht zwar auch mit 0, aber wer weiss was da OS updates bringen in der Zukunft.
+        appDelegate.displayBrightness = screen.brightness;
+        screen.wantsSoftwareDimming = YES; // damit bekommt man es noch dunkler
+        screen.brightness = 0.01; // es geht zwar auch mit 0, aber wer weiss was da OS updates bringen in der Zukunft.
     }
     else
     {
-        [UIScreen mainScreen].wantsSoftwareDimming = NO;
-        [UIScreen mainScreen].brightness = appDelegate.displayBrightness;
+        screen.wantsSoftwareDimming = NO;
+        screen.brightness = appDelegate.displayBrightness;
     }
 }
 

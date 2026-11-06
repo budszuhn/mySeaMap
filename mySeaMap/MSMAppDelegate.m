@@ -6,7 +6,8 @@
 //  Copyright (c) 2013 - 2016 Frank Budszuhn. See LICENSE.
 //
 
-#import <TMCache/TMCache.h>
+#import "MSMDiskCache.h"
+#import "MSMCoreDataStack.h"
 #import "MSMAppDelegate.h"
 #import "MSMLocationManager.h"
 #import "MSMUtils.h"
@@ -16,8 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Magical Record
-    [MagicalRecord setupCoreDataStackWithStoreNamed:@"myseamap.db"];
+    // Core Data (früher MagicalRecord)
+    [MSMCoreDataStack setupWithStoreNamed:@"myseamap.db"];
     
     [MSMLocationManager manager]; // get it started
     
@@ -47,7 +48,7 @@
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     
-    // TODO: hier auch MagicalRecord-Cleanup??
+    [MSMCoreDataStack save];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -63,11 +64,14 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    [MagicalRecord cleanUp];
+    [MSMCoreDataStack save];
 }
 
-- (BOOL) application:(UIApplication *)app openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options
+// Seit der Umstellung auf UIScene ruft der MSMSceneDelegate diese Methode auf
+- (BOOL) handleOpenURL: (NSURL *) url
 {
+    UIApplication *app = [UIApplication sharedApplication];
+
     if ([@"myseamap" isEqualToString:[url scheme]])
     {
         if ([[url host] isEqualToString:@"getvalues"]) {
@@ -90,7 +94,11 @@
                 // wann launchen wir den Weg zurück???
                 NSString *callbackUrl = [launchUrl stringByAppendingString: [self generateCallbackParamsForLocation:loc]];
                 NSLog(@"callackUrl = %@", callbackUrl);
-                return [app openURL: [NSURL URLWithString: callbackUrl]];
+                NSURL *callback = [NSURL URLWithString: callbackUrl];
+                if (callback == nil)
+                    return NO;
+                [app openURL: callback options: @{} completionHandler: nil];
+                return YES;
             }
         }
         
@@ -100,6 +108,8 @@
             NSMutableDictionary *queryDict = [NSMutableDictionary dictionary];
             for (NSString *aPair in queryComponents) {
                 NSArray *values = [aPair componentsSeparatedByString:@"="];
+                if ([values count] < 2)
+                    continue; // fehlerhafte Parameter würden sonst zum Absturz führen
                 NSString *key = [values objectAtIndex: 0];
                 NSString *value = [values objectAtIndex:1];
                 if ([self validateLaunchParamKey:key andValue:value]) {

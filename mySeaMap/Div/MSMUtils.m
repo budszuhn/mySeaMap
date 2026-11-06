@@ -13,17 +13,23 @@
 
 + (BOOL) isIPad
 {
-    return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
+    return [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad;
+}
+
++ (BOOL) isLargeLayoutForTraitCollection: (UITraitCollection *) traitCollection
+{
+    return traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular
+        && traitCollection.verticalSizeClass == UIUserInterfaceSizeClassRegular;
 }
 
 + (BOOL) isIPhone
 {
-    return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone;
+    return [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone;
 }
 
 + (BOOL) isRetina
 {
-    return [UIScreen mainScreen].scale == 2.0;
+    return [UITraitCollection currentTraitCollection].displayScale >= 2.0;
 }
 
 // helper für user defaults
@@ -94,7 +100,7 @@
 + (NSString *) userFriendlyTimeInterval: (NSTimeInterval) interval
 {
     NSUInteger seconds = (NSUInteger)round(interval);
-    return [NSString stringWithFormat:@"%02u:%02u:%02u", seconds / 3600, (seconds / 60) % 60, seconds % 60];
+    return [NSString stringWithFormat:@"%02lu:%02lu:%02lu", (unsigned long)(seconds / 3600), (unsigned long)((seconds / 60) % 60), (unsigned long)(seconds % 60)];
 }
 
 + (NSDateFormatter *) iso8601Formatter
@@ -106,45 +112,6 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
 
     return dateFormatter;
-}
-
-/*
- * Diese Methode ist für die Behandlung des Elends mit MKMapView -> setCenterCoordinate
- * Leider wird je nach iOS-Version und Sichtbarkeit der StatusBar die Karte verschieden 'ge-centered'
- * Dazu kommt das weitere Elend mit der "In-CAll-Erhöhung" der StatusBar (einkommender Anruf oder andere Vergrößerung der Status-Bar). Dafür brauchen wir den Parameter isForRead
- * denn setCenterCoordinate und die Methode convertToPoint gehen in diesem Fall scheinbar von unterschiedlichen Bedingungen aus
- *
- */
-+ (CGFloat) statusBarOffsetForRead: (BOOL) isForRead;
-{
-    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
-    BOOL os9 = [[UIDevice currentDevice].systemVersion floatValue] < 10.0;
-    BOOL isInCall = statusBarHeight > 20.0;
-    
-    if (os9) {
-        if (isInCall && isForRead) {
-            return 30.0;
-        }
-        else {
-            return 10.0;
-        }
-    }
-    else { // ab iOS 10
-        if (isForRead) {
-            if (isInCall) {
-                return 30.0;
-            }
-            else {
-                return statusBarHeight / 2.0;
-            }
-        }
-        else if (statusBarHeight > 0.0) {
-            return 10.0;
-        }
-        else {
-            return 0.0;
-        }
-    }
 }
 
 @end

@@ -10,8 +10,6 @@
 
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
-#import <UIAlertView+Blocks/UIAlertView+Blocks.h>
-#import <UITableView-NXEmptyView/UITableView+NXEmptyView.h>
 #import "MSMMapObjectDetailTableViewController.h"
 #import "MSMMapObjectRawDataViewController.h"
 #import "MSMInfoGroup.h"
@@ -40,7 +38,23 @@
     [super viewDidLoad];
     
     self.emptyView.text = NSLocalizedString(@"LABEL_EMPTY_VIEW", nil);
-    self.tableView.nxEV_emptyView = self.emptyView;
+}
+
+// Hinweis anzeigen, wenn es keine Einträge gibt (früher UITableView-NXEmptyView)
+- (void) updateEmptyView
+{
+    BOOL isEmpty = YES;
+    for (NSInteger section = 0; section < [self numberOfSectionsInTableView: self.tableView]; section++)
+    {
+        if ([self tableView: self.tableView numberOfRowsInSection: section] > 0)
+        {
+            isEmpty = NO;
+            break;
+        }
+    }
+
+    self.emptyView.textAlignment = NSTextAlignmentCenter;
+    self.tableView.backgroundView = isEmpty ? self.emptyView : nil;
 }
 
 
@@ -49,7 +63,8 @@
     [super viewWillAppear:animated];
     
     self.title = self.mapObject.title;
-    self.positionItem.title = [self.mapObject nauticalDescription];    
+    self.positionItem.title = [self.mapObject nauticalDescription];
+    [self updateEmptyView];
 }
 
 #pragma mark - UIPopoverPresentationControllerDelegate
@@ -151,16 +166,14 @@
             NSString *phoneUrl = [NSString stringWithFormat:@"tel://%@", [MSMUtils preparePhoneNumber: value]];
             if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString: phoneUrl]])
             {
-                [UIAlertView showWithTitle:NSLocalizedString(@"ALERT_CALL", nil)
-                                   message:[NSString stringWithFormat:NSLocalizedString(@"ALERT_PLACE_CALL", nil), value]
-                         cancelButtonTitle:NSLocalizedString(@"BUTTON_CANCEL", nil)
-                         otherButtonTitles:@[NSLocalizedString(@"BUTTON_CALL", nil)]
-                                  tapBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
-                                      if (buttonIndex != [alertView cancelButtonIndex])
-                                      {
-                                          [[UIApplication sharedApplication] openURL: [NSURL URLWithString: phoneUrl]];
-                                      }
-                                  }];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle: NSLocalizedString(@"ALERT_CALL", nil)
+                                                                               message: [NSString stringWithFormat:NSLocalizedString(@"ALERT_PLACE_CALL", nil), value]
+                                                                        preferredStyle: UIAlertControllerStyleAlert];
+                [alert addAction: [UIAlertAction actionWithTitle: NSLocalizedString(@"BUTTON_CANCEL", nil) style: UIAlertActionStyleCancel handler: nil]];
+                [alert addAction: [UIAlertAction actionWithTitle: NSLocalizedString(@"BUTTON_CALL", nil) style: UIAlertActionStyleDefault handler: ^(UIAlertAction *action) {
+                    [[UIApplication sharedApplication] openURL: [NSURL URLWithString: phoneUrl] options: @{} completionHandler: nil];
+                }]];
+                [self presentViewController: alert animated: YES completion: nil];
             }
         }
         else if ([key isEqualToString:@"email"])
@@ -180,7 +193,7 @@
     SFSafariViewController *safari = [[SFSafariViewController alloc] initWithURL: url];
     safari.delegate = self;
     
-    UIViewController *presentingViewController = [[[UIApplication sharedApplication] delegate] window].rootViewController;
+    UIViewController *presentingViewController = self.view.window.rootViewController;
     
     while(presentingViewController.presentedViewController != nil)
     {
@@ -196,13 +209,11 @@
 {
     if (! [MFMailComposeViewController canSendMail])
     {
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle: NSLocalizedString(@"EMAIL_NOT_CONFIGURED_TITLE", nil)
-                              message: NSLocalizedString(@"EMAIL_NOT_CONFIGURED_TEXT", nil)
-                              delegate: self
-                              cancelButtonTitle: nil
-                              otherButtonTitles: @"OK", nil];
-        [alert show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle: NSLocalizedString(@"EMAIL_NOT_CONFIGURED_TITLE", nil)
+                                                                       message: NSLocalizedString(@"EMAIL_NOT_CONFIGURED_TEXT", nil)
+                                                                preferredStyle: UIAlertControllerStyleAlert];
+        [alert addAction: [UIAlertAction actionWithTitle: @"OK" style: UIAlertActionStyleDefault handler: nil]];
+        [self presentViewController: alert animated: YES completion: nil];
     }
     else
     {

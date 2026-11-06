@@ -61,7 +61,7 @@
 
 #pragma mark - NSCoding
 
-// wird für TMCache gebraucht
+// wird für MSMDiskCache gebraucht
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
