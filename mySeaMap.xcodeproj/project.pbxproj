@@ -895,7 +895,7 @@
 				CODE_SIGN_ENTITLEMENTS = mySeaMap/myseamap.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = X7EV8WNP9F;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mySeaMap/mySeaMap-Prefix.pch";
@@ -923,7 +923,7 @@
 				CODE_SIGN_ENTITLEMENTS = mySeaMap/myseamap.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = X7EV8WNP9F;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mySeaMap/mySeaMap-Prefix.pch";
